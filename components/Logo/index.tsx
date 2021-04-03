@@ -5,10 +5,10 @@ import classNames from 'classnames/bind';
 const Logo = () => {
     return (
         <Link href="/">
-            <a data-text="<ponomarev />" className={classNames({
-                'light-color': false,
+            <a data-text="<evgeniy.p />" className={classNames({
+                [styles.lightColor]: false,
                 [styles.glitch]: true
-            })}>{`<ponomarev />`}</a>
+            })}>{`<evgeniy.p />`}</a>
         </Link>
     )
 }

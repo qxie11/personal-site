@@ -1,5 +1,5 @@
-.light-color {
-    color: white;
+.lightColor {
+    color: white !important;
 }
 
 .glitch {
@@ -22,6 +22,7 @@
         clip: rect(44px, 450px, 56px, 0);
         animation: glitch-anim 5s infinite linear alternate-reverse;
     }
+
     &:after {
         content: attr(data-text);
         position: absolute;
