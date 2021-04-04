@@ -6,7 +6,7 @@ const Logo = () => {
     return (
         <Link href="/">
             <a data-text="<evgeniy.p />" className={classNames({
-                [styles.lightColor]: false,
+                lightColor: false,
                 [styles.glitch]: true
             })}>{`<evgeniy.p />`}</a>
         </Link>

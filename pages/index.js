@@ -8,7 +8,7 @@ export default function Home({ data }) {
   )
 }
 export async function getStaticProps() {
-    const res = await fetch(`http://localhost:3000/api/hello/`)
+    const res = await fetch(`http://localhost:3000/api/home-data/`)
     const data = await res.json()
 
     return { props: { data } }
