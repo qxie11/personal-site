@@ -1,7 +1,9 @@
+@import "../../styles/vars";
+
 .glitch {
     position: relative;
+    font-family: $montserrat;
     font-size: 35px;
-    font-weight: 200;
     letter-spacing: 15px;
     animation: glitch-skew 1s infinite linear alternate-reverse;
 

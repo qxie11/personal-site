@@ -2,10 +2,10 @@ import Link from 'next/link';
 import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 
-const Logo = () => {
+const Logo: React.FC = () => {
     return (
         <Link href="/">
-            <a data-text="<evgeniy.p />" className={classNames({
+            <a title="evgeniy.p" data-text="<evgeniy.p />" className={classNames({
                 lightColor: false,
                 [styles.glitch]: true
             })}>{`<evgeniy.p />`}</a>

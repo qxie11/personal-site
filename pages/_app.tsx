@@ -1,5 +1,6 @@
 import NextNprogress from 'nextjs-progressbar';
 import Head from 'next/head';
+import '../styles/fonts.scss';
 import '../styles/base.scss';
 import '../styles/global.scss';
 

@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+
+  & > * {
+    margin-right: 77px;
+    font-size: 18px;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: #b80929;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
