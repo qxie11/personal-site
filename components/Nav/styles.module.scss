@@ -1,5 +1,8 @@
+@import "../../styles/vars";
+
 .nav {
   display: flex;
+  align-items: center;
 
   & > * {
     margin-right: 77px;
@@ -7,11 +10,28 @@
     transition: 0.3s ease;
 
     &:hover {
-      color: #b80929;
+      color: $shiraz;
     }
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+}
+
+.toggle_mode_btn {
+  background: transparent;
+  border: none;
+}
+
+.svg {
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+
+  &:hover  {
+    path {
+      fill: $shiraz;
     }
   }
 }
