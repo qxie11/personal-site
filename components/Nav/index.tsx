@@ -16,7 +16,7 @@ interface Data {
 const Nav: React.FC = () => {
     const data: Data | null = useContext(NavDataContext);
     const dispatch = useDispatch();
-    const isDarkMode: boolean = useSelector((state: RootState) => state.modeReducer.isDarkMode)
+    const isDarkMode: boolean = useSelector((state: RootState) => state.modeReducer.isDarkMode);
     return (
         <nav className={styles.nav}>
             {
@@ -30,7 +30,7 @@ const Nav: React.FC = () => {
             }
             {
                 !isDarkMode ? <button className={styles.toggle_mode_btn} onClick={() => dispatch(changeMode())}>
-                    <svg className={styles.svg} viewBox="0 0 312.999 312.999">
+                    <svg className={`${styles.svg} ${styles.moon}`} viewBox="0 0 312.999 312.999">
                         <path d="M305.6,178.053c-3.2-0.8-6.4,0-9.2,2c-10.4,8.8-22.4,16-35.6,20.8c-12.4,4.8-26,7.2-40.4,7.2c-32.4,0-62-13.2-83.2-34.4
                 c-21.2-21.2-34.4-50.8-34.4-83.2c0-13.6,2.4-26.8,6.4-38.8c4.4-12.8,10.8-24.4,19.2-34.4c3.6-4.4,2.8-10.8-1.6-14.4
                 c-2.8-2-6-2.8-9.2-2c-34,9.2-63.6,29.6-84.8,56.8c-20.4,26.8-32.8,60-32.8,96.4c0,43.6,17.6,83.2,46.4,112s68.4,46.4,112,46.4
@@ -40,7 +40,7 @@ const Nav: React.FC = () => {
                 c16.8,0,32.8-2.8,47.6-8.4c5.2-2,10.4-4,15.2-6.4C274,232.453,260.8,248.853,244.4,261.653z" />
                     </svg>
                 </button> : <button className={styles.toggle_mode_btn} onClick={() => dispatch(changeMode())}>
-                    <svg className={styles.svg} viewBox="0 0 302.4 302.4">
+                    <svg className={`${styles.svg} ${styles.sun}`} fill="white" viewBox="0 0 302.4 302.4">
                         <path d="M204.8,97.6C191.2,84,172,75.2,151.2,75.2s-40,8.4-53.6,22.4c-13.6,13.6-22.4,32.8-22.4,53.6s8.8,40,22.4,53.6
 			c13.6,13.6,32.8,22.4,53.6,22.4s40-8.4,53.6-22.4c13.6-13.6,22.4-32.8,22.4-53.6S218.8,111.2,204.8,97.6z M190.4,190.4
 			c-10,10-24,16-39.2,16s-29.2-6-39.2-16s-16-24-16-39.2s6-29.2,16-39.2s24-16,39.2-16s29.2,6,39.2,16s16,24,16,39.2

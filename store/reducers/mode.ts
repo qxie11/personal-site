@@ -6,7 +6,7 @@ interface State {
 }
 
 const initialState: State = {
-    isDarkMode: true,
+    isDarkMode: false,
 }
 
 export default createReducer(initialState, {

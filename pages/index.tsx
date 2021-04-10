@@ -1,5 +1,6 @@
 import { createContext } from 'react';
 import Header from "../components/Header";
+import HomeIntro from "../components/HomeIntro";
 
 export const NavDataContext = createContext(null);
 
@@ -9,7 +10,9 @@ export default function Home({ data }) {
         <NavDataContext.Provider value={data.nav}>
             <Header />
         </NavDataContext.Provider>
-        <main></main>
+        <main>
+            <HomeIntro data={data.intro} />
+        </main>
     </>
   )
 }

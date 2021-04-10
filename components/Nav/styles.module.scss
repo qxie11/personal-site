@@ -35,3 +35,19 @@
     }
   }
 }
+
+.moon, .sun {
+  transition: .5s ease;
+}
+
+.moon {
+  &:hover {
+    transform: rotate(40deg);
+  }
+}
+
+.sun {
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
