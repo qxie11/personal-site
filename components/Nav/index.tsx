@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useContext } from "react";
+import { useContext, useRef, useEffect } from "react";
+import gsap from "gsap";
 import { RootState } from "../../store/store";
 import { changeMode } from "../../store/actions/mode";
 import Link from "next/link";
@@ -17,6 +18,18 @@ const Nav: React.FC = () => {
     const data: Data | null = useContext(NavDataContext);
     const dispatch = useDispatch();
     const isDarkMode: boolean = useSelector((state: RootState) => state.modeReducer.isDarkMode);
+
+    const links = useRef<HTMLAnchorElement[]>([]);
+
+    useEffect(() => {
+        gsap.from(links.current, { y: -100, stagger: 0.2, delay: 0.4, opacity: 0 })
+    }, []);
+
+    const addLinkToRef = (el: HTMLAnchorElement) => {
+        if (el && !links.current.includes(el)) {
+            links.current.push(el)
+        }
+    }
     return (
         <nav className={styles.nav}>
             {
@@ -24,7 +37,7 @@ const Nav: React.FC = () => {
                         <Link href={data.link[i]} key={i + item}>
                             <a className={classNames({
                                 lightColor: isDarkMode,
-                            })}>{item}</a>
+                            })} ref={addLinkToRef}>{item}</a>
                         </Link>
                     )) : Array(3).fill('').map(_ => <Skeleton width={140} />)
             }

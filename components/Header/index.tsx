@@ -8,7 +8,7 @@ const Header: React.FC = () => {
     const header = useRef<HTMLHeadElement | null>(null);
 
     useEffect(() => {
-        gsap.from(header.current, {y: -50, duration: 1.9, ease: 'elastic'})
+        gsap.from(header.current, {y: -50, duration: 1.9, delay: 0.2, ease: 'elastic'})
     })
 
     return (
