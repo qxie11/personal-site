@@ -8,17 +8,20 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     },
     intro: {
       greeting: 'привет, меня зовут Евгений',
-      title: 'я ментор, веб-разработчик',
-      sub: 'разрабатываю веб-сайты более трех лет, за плечами большой опыт в разработке, а также в обучении верстке сайтов.',
+      title: 'я фрилансер, веб-разработчик',
+      sub: 'разрабатываю веб-сайты более четырех лет, за плечами большой опыт в разработке, а также в обучении верстке сайтов.',
       links: [{
         name: 'telegram',
         link: 'https://t.me/dsxxxx',
+        color: '#0088cc'
       }, {
         name: 'vk',
         link: 'https://vk.com/ponomarevevgeniy',
+        color: '#4C75A3'
       }, {
         name: 'github',
         link: 'https://github.com/qxie11',
+        color: '#333333'
       }]
     }
   })

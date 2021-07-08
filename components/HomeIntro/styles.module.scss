@@ -1,4 +1,55 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
 .homeIntro {
+  padding: 250px 0;
+  background: url('/images/backgrounds/light-bg.jpg') no-repeat center center;
+  background-size: cover; 
+}
+
+.darkBg {
+  background: url('/images/backgrounds/dark-bg.jpg') no-repeat center center;
+  background-size: cover; 
+}
+
+.title,
+.subtitle,
+.loading {
+  max-width: 560px;
+}
+
+.titleSpan {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.socialList {
+  display: flex;
+  gap: 15px;
+}
+
+.socialLink {
   position: relative;
-  min-height: 100vh;
+  font-family: $montserrat;
+  font-size: 25px;
+  font-weight: 600;
+
+  &:before {
+    content: '';
+    width: 0;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: $shiraz;
+    transition: width 0.4s;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
 }

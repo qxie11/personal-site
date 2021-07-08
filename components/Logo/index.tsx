@@ -6,6 +6,7 @@ import { RootState } from "../../store/store";
 
 const Logo: React.FC = () => {
     const isDarkMode: boolean = useSelector((state: RootState) => state.modeReducer.isDarkMode);
+
     return (
         <Link href="/">
             <a title="evgeniy.p" data-text="<evgeniy.p />" className={classNames({

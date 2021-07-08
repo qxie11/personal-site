@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import Logo from "../Logo";
-import Nav from "../Nav";
+import Logo from '../Logo';
+import Nav from '../Nav';
 import styles from './styles.module.scss';
 
 const Header: React.FC = () => {
@@ -12,7 +12,7 @@ const Header: React.FC = () => {
     })
 
     return (
-        <div className="container">
+        <div className='container'>
             <header ref={header} className={styles.header}>
                 <Logo />
                 <Nav />
