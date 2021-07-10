@@ -1,4 +1,5 @@
 @import "../../styles/vars";
+@import "../../styles/mixins";
 
 .glitch {
     position: relative;
@@ -31,6 +32,17 @@
         left: -2px;
         text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
         animation: glitch-anim2 1s infinite linear alternate-reverse;
+    }
+
+    @include breakpoint(1000px) {
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 10px;
+    }
+
+    @include breakpoint(768px) {
+        max-width: 280px;
+        color: $white;
     }
 }
 

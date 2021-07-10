@@ -5,11 +5,15 @@
   color: $white;
 }
 
+.lightBg {
+  background: $white;
+}
+
 .container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 a, button, input, textarea {

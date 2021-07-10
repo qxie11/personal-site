@@ -1,20 +1,35 @@
 @import "../../styles/vars";
+@import "../../styles/mixins";
 
 .nav {
   display: flex;
   align-items: center;
+  margin-left: auto;
+
+  @include breakpoint(768px) {
+    justify-self: center;
+    flex-direction: column;
+    gap: 25px;
+    margin-left: 0;
+  }
 
   & > * {
     margin-right: 77px;
     font-size: 18px;
     transition: 0.3s ease;
 
-    &:hover {
-      color: $shiraz;
+    @include breakpoint(1000px) {
+      margin-right: 30px;
     }
 
-    &:last-child {
-      margin-right: 0;
+    @include breakpoint(768px) {
+      font-size: 36px;
+      letter-spacing: 5px;
+      color: $white;
+    }
+
+    &:hover {
+      color: $shiraz;
     }
   }
 }
@@ -22,12 +37,21 @@
 .toggle_mode_btn {
   background: transparent;
   border: none;
+
+  @include breakpoint(768px) {
+    max-width: 37px;
+    justify-self: center;
+  }
 }
 
 .svg {
   width: 27px;
   height: 27px;
   cursor: pointer;
+
+  @include breakpoint(768px) {
+    fill: $white;
+  }
 
   &:hover  {
     path {
