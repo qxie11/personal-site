@@ -22,7 +22,12 @@ export default function Home({ data }) {
   )
 }
 export async function getStaticProps() {
-    const res = await fetch(`${server}/api/home-data/`);
+    const res = await fetch(`${server}/api/home-data/`, {
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'User-Agent': '*',
+      },
+    });
     const data = await res.json();
 
     return { props: { data } }
