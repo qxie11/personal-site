@@ -5,6 +5,10 @@
   padding: 250px 0;
   background: url('/images/backgrounds/light-bg.jpg') no-repeat center center;
   background-size: cover; 
+
+  @include breakpoint(568px) {
+    padding: 120px 0;
+  }
 }
 
 .darkBg {
@@ -25,7 +29,7 @@
 
 .socialList {
   display: flex;
-  gap: 15px;
+  gap: 50px;
 }
 
 .socialLink {
@@ -33,6 +37,10 @@
   font-family: $montserrat;
   font-size: 25px;
   font-weight: 600;
+
+  @include breakpoint(568px) {
+    font-size: 17px;
+  }
 
   &:before {
     content: '';
