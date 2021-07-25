@@ -31,7 +31,7 @@ const ExamplesOfProjects: React.FC<Props> = ({ data }) => {
             </div>
             <ul className="projectItemsWrapper">
                 {
-                    data.map((project: IProjectItem) => {
+                    data?.map((project: IProjectItem) => {
                         return <li key={project.img}><ProjectItem {...project} /></li>
                     })
                 }
