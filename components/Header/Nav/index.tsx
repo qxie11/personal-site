@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useContext, useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { RootState } from '../../store/store';
-import { changeMode } from '../../store/actions/mode';
+import { RootState } from '../../../store/store';
+import { changeMode } from '../../../store/actions/mode';
 import Link from 'next/link';
 import Skeleton from 'react-loading-skeleton';
 import styles from './styles.module.scss';
-import { NavDataContext } from '../../pages';
+import { NavDataContext } from '../../../pages';
 import classNames from 'classnames';
 
 interface Data {
@@ -30,6 +30,7 @@ const Nav: React.FC = () => {
             links.current.push(el)
         }
     }
+
     return (
         <>
             <nav className={styles.nav}>

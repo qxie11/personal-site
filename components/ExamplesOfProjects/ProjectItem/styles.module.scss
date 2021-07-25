@@ -1,0 +1,55 @@
+@import "../../../styles/vars";
+
+.projectItem {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  justify-content: center;
+  border-top: 1px solid $black;
+
+  &:hover {
+    @media (min-width: 992px) {
+      .projectImage {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  &.projectItemDark {
+    border-top: 1px solid $white;
+  }
+}
+
+.projectImage {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: 0.4s ease;
+}
+
+.projectTitle {
+  position: absolute;
+  top: 30%;
+  z-index: 10;
+  font-size: 40px;
+  font-weight: 400;
+
+  @media (max-width: 1430px) {
+    left: 40px;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+}
+
+.projectLink {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+}

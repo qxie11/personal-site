@@ -10,7 +10,8 @@ const initialState: State = {
 }
 
 export default createReducer(initialState, {
-    [changeMode.type]: function (state) {
-        state.isDarkMode = !state.isDarkMode;
+    [changeMode.type]: function (state, { payload }) {
+        state.isDarkMode = payload ?? !state.isDarkMode;
+        localStorage.setItem('theme', state.isDarkMode.toString());
     }
 });
