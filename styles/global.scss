@@ -58,8 +58,17 @@ a, button, input, textarea {
   }
 }
 
-section {
-  padding: 100px 0;
+.link {
+  transition: 0.3s ease;
+
+  &:hover {
+    color: $shiraz;
+  }
+}
+
+section,
+.section {
+  padding: 55px 0;
 
   @include breakpoint(768px) {
     padding: 40px 0;

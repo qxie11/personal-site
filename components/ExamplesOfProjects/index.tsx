@@ -19,13 +19,11 @@ const ExamplesOfProjects: React.FC<Props> = ({ data }) => {
     const isDarkMode: boolean = useSelector((state: RootState) => state.modeReducer.isDarkMode);
 
     return (
-        <section id="works" className={classNames({
-            [styles.projectExamples]: true,
+        <section id="works" className={classNames(styles.projectExamples, {
             'darkBg': isDarkMode,
         })}>
             <div className="container">
-                <h2 className={classNames({
-                    'small-title': true,
+                <h2 className={classNames('small-title', {
                     'lightColor': isDarkMode,
                 })}>Примеры работ</h2>
             </div>

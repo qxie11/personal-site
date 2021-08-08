@@ -40,32 +40,26 @@ const HomeIntro = ({ data }: Props) => {
     }
 
     return (
-        <section className={classNames({
-            [styles.homeIntro]: true,
+        <section className={classNames(styles.homeIntro, {
             [styles.darkBg]: isDarkMode,
         })}>
             <div className='container' ref={container}>
-                { data ? (<><h1 className={classNames({
+                { data ? (<><h1 className={classNames('title', styles.title, {
                     lightColor: isDarkMode,
-                    [styles.title]: true,
-                    title: true
                 })}>
                     <span className={styles.titleSpan}>{ data.greeting }</span>
                     <br />
                     { data.title }
                 </h1>
-                <p className={classNames({
+                <p className={classNames('subtitle', styles.subtitle, {
                     lightColor: isDarkMode,
-                    [styles.subtitle]: true,
-                    subtitle: true
                 })}>{ data.sub }</p>
                 <ul className={styles.socialList}>
                     {
                         data.links.map(({ name, link, color }: Link) => (
                             <li key={link}>
-                                <a className={classNames({
+                                <a className={classNames(styles.socialLink, {
                                         lightColor: isDarkMode,
-                                        [styles.socialLink]: true,
                                     })} 
                                     style={{ color }} 
                                     target='_blank'

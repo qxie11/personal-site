@@ -9,8 +9,7 @@ const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
   const isDarkMode: boolean = useSelector((state: RootState) => state.modeReducer.isDarkMode);
 
   return (
-    <div className={classNames({
-      [styles.projectItem]: true,
+    <div className={classNames(styles.projectItem, {
       [styles.projectItemDark]: isDarkMode,
     })}>
       <a href={url} className={styles.projectLink} target="_blank"></a>
@@ -24,8 +23,9 @@ const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
         quality={90}
       />
         <div className="container">
-          <h3 style={{ textShadow: `1px 1px 6px ${isDarkMode ? '#000' : '#fff'}`}} className={classNames({
-            [styles.projectTitle]: true,
+          <h3
+            style={{ textShadow: `1px 1px 6px ${isDarkMode ? '#000' : '#fff'}`}}
+            className={classNames(styles.projectTitle, {
             'lightColor': isDarkMode,
           })}>
             <span>{title}</span>

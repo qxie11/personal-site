@@ -1,11 +1,16 @@
 import { createContext, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Head from 'next/head';
+import { server } from '../config';
+
+// Actions
+import { changeMode } from '../store/actions/mode';
+
+// Components
 import Header from '../components/Header';
 import HomeIntro from '../components/HomeIntro';
 import ExamplesOfProjects from '../components/ExamplesOfProjects';
-import { server } from '../config';
-import { useDispatch } from 'react-redux';
-import { changeMode } from '../store/actions/mode';
+import Footer from '../components/Footer';
 
 export const NavDataContext = createContext(null);
 
@@ -30,6 +35,9 @@ export default function Home({ data }) {
             <HomeIntro data={data.intro} />
             <ExamplesOfProjects data={data.projects} />
         </main>
+        <NavDataContext.Provider value={data.nav}>
+            <Footer />
+        </NavDataContext.Provider>
     </>
   )
 }

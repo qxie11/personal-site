@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useContext, useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { RootState } from '../../../store/store';
-import { changeMode } from '../../../store/actions/mode';
+import { RootState } from '../../store/store';
+import { changeMode } from '../../store/actions/mode';
 import Link from 'next/link';
 import Skeleton from 'react-loading-skeleton';
 import styles from './styles.module.scss';
-import { NavDataContext } from '../../../pages';
+import { NavDataContext } from '../../pages';
 import classNames from 'classnames';
 
 interface Data {
@@ -14,7 +14,12 @@ interface Data {
     link: string[],
 }
 
-const Nav: React.FC = () => {
+interface Props {
+    withoutToggleTheme: true | undefined;
+    notConvertIntoToggleMenu: true | undefined;
+}
+
+const Nav: React.FC<Props> = ({ withoutToggleTheme, notConvertIntoToggleMenu }) => {
     const data: Data | null = useContext(NavDataContext);
     const dispatch = useDispatch();
     const isDarkMode: boolean = useSelector((state: RootState) => state.modeReducer.isDarkMode);
@@ -33,11 +38,13 @@ const Nav: React.FC = () => {
 
     return (
         <>
-            <nav className={styles.nav}>
+            <nav className={classNames(styles.nav, {
+                [styles.menuConvert]: !notConvertIntoToggleMenu
+            })}>
                 {
                     data ? data.items.map((item: string, i: number) => (
                             <Link href={data.link[i]} key={i + item}>
-                                <a className={classNames({
+                                <a className={classNames('link', {
                                     lightColor: isDarkMode,
                                 })} ref={addLinkToRef}>{item}</a>
                             </Link>
@@ -45,7 +52,7 @@ const Nav: React.FC = () => {
                 }
             </nav>
             {
-                !isDarkMode ? <button className={styles.toggle_mode_btn} onClick={() => dispatch(changeMode())}>
+                !withoutToggleTheme && (!isDarkMode ? <button className={styles.toggle_mode_btn} onClick={() => dispatch(changeMode())}>
                     <svg className={`${styles.svg} ${styles.moon}`} viewBox='0 0 312.999 312.999'>
                         <path d='M305.6,178.053c-3.2-0.8-6.4,0-9.2,2c-10.4,8.8-22.4,16-35.6,20.8c-12.4,4.8-26,7.2-40.4,7.2c-32.4,0-62-13.2-83.2-34.4
                 c-21.2-21.2-34.4-50.8-34.4-83.2c0-13.6,2.4-26.8,6.4-38.8c4.4-12.8,10.8-24.4,19.2-34.4c3.6-4.4,2.8-10.8-1.6-14.4
@@ -75,7 +82,7 @@ const Nav: React.FC = () => {
                         <path d='M80.4,221.6c-3.6-4-10.4-4-14.4,0l-22,22c-4,4-4,10.4,0,14.4s10.4,4,14.4,0l22-22C84.4,232,84.4,225.6,80.4,221.6z'/>
                         <path d='M80.4,66.4l-22-22c-4-4-10.4-4-14.4,0s-4,10.4,0,14.4l22,22c4,4,10.4,4,14.4,0S84.4,70.4,80.4,66.4z'/>
                     </svg>
-                </button>
+                </button>)
             }
         </>
     )

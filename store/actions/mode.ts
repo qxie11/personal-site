@@ -1,4 +1,4 @@
-import { createAction, PrepareAction } from "@reduxjs/toolkit";
+import { createAction } from "@reduxjs/toolkit";
 
 export const changeMode = createAction(
   'CHANGE_MODE',

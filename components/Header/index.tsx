@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import Logo from './Logo';
-import Nav from './Nav';
+import Logo from '../Logo';
+import Nav from '../Nav';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 
