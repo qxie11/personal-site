@@ -1,7 +1,13 @@
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
-import { RootState } from '../../store/store';
+
+// Types
+import { RootState } from '../../../../store/store';
+
+// Styles
 import styles from './styles.module.scss';
+
+// Components
 import ProjectItem from './ProjectItem';
 
 export interface IProjectItem {

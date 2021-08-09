@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '../../../../store/store';
 import classNames from 'classnames';
 import Skeleton from 'react-loading-skeleton';
 import gsap from 'gsap';

@@ -1,16 +1,16 @@
 import { createContext, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Head from 'next/head';
+import axios from 'axios';
 import { server } from '../config';
 
 // Actions
 import { changeMode } from '../store/actions/mode';
 
 // Components
-import Header from '../components/Header';
-import HomeIntro from '../components/HomeIntro';
-import ExamplesOfProjects from '../components/ExamplesOfProjects';
-import Footer from '../components/Footer';
+import MainWrapper from '../components/wrappers/MainWrapper';
+import HomeIntro from '../components/sections/Main/HomeIntro';
+import ExamplesOfProjects from '../components/sections/Main/ExamplesOfProjects';
 
 export const NavDataContext = createContext(null);
 
@@ -24,31 +24,21 @@ export default function Home({ data }) {
   }, [])
 
   return (
-      <>  
-        <Head>
-          <title>Evgeniy Vronskiy</title>
-        </Head>
-        <NavDataContext.Provider value={data.nav}>
-            <Header />
-        </NavDataContext.Provider>
-        <main>
-            <HomeIntro data={data.intro} />
-            <ExamplesOfProjects data={data.projects} />
-        </main>
-        <NavDataContext.Provider value={data.nav}>
-            <Footer />
-        </NavDataContext.Provider>
+    <>  
+      <Head>
+        <title>Evgeniy Vronskiy</title>
+      </Head>
+      <NavDataContext.Provider value={data.nav}>
+        <MainWrapper>
+          <HomeIntro data={data.intro} />
+          <ExamplesOfProjects data={data.projects} />
+        </MainWrapper>
+      </NavDataContext.Provider>
     </>
   )
 }
 export async function getStaticProps() {
-    const res = await fetch(`${server}/api/home-data/`, {
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'User-Agent': '*',
-      },
-    });
-    const data = await res.json();
+    const { data } = await axios.get(`${server}/api/home-data/`);
 
     return { props: { data } }
 }
