@@ -38,7 +38,10 @@ export default function Home({ data }) {
   )
 }
 export async function getStaticProps() {
-    const { data } = await axios.get(`${server}/api/home-data/`);
-
+  try {
+    const { data } = await axios.get(`${server}/api/hodme-data/`);
     return { props: { data } }
+  } catch {
+    return { props: { data: {} } }
+  }
 }

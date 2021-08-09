@@ -48,7 +48,7 @@ const Nav: React.FC<Props> = ({ withoutToggleTheme, notConvertIntoToggleMenu }) 
                                     lightColor: isDarkMode,
                                 })} ref={addLinkToRef}>{item}</a>
                             </Link>
-                        )) : Array(3).fill('').map(_ => <Skeleton width={140} />)
+                        )) : Array(3).fill('').map((_, i) => <Skeleton key={i} width={140} />)
                 }
             </nav>
             {
