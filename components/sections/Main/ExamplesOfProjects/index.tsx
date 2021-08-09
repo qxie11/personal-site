@@ -9,6 +9,7 @@ import styles from './styles.module.scss';
 
 // Components
 import ProjectItem from './ProjectItem';
+import LoadingSpinner from "../../../UI/LoadingSpinner";
 
 export interface IProjectItem {
     title: string,
@@ -35,9 +36,11 @@ const ExamplesOfProjects: React.FC<Props> = ({ data }) => {
             </div>
             <ul className="projectItemsWrapper">
                 {
-                    data?.map((project: IProjectItem) => {
-                        return <li key={project.img}><ProjectItem {...project} /></li>
-                    })
+                    data?.map((project: IProjectItem) => (
+                      <li key={project.img}>
+                          <ProjectItem {...project} />
+                      </li>
+                    )) || <LoadingSpinner />
                 }
             </ul>
         </section>
