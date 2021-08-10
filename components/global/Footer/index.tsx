@@ -29,7 +29,11 @@ const Footer: React.FC = () => {
         <a className={classNames('link', styles.vkLink, {
           lightColor: isDarkMode,
         })} target="_blank" href="https://vk.com/evgeniy_vronskiy">vk.com/evgeniy_vronskiy</a>
-        <Nav withoutToggleTheme notConvertIntoToggleMenu />
+        <Nav
+          withoutToggleTheme
+          notConvertIntoToggleMenu
+          preloadWidth={60}
+        />
       </div>
     </footer>
   )

@@ -25,9 +25,14 @@ interface Data {
 interface Props {
     withoutToggleTheme?: true;
     notConvertIntoToggleMenu?: true;
+    preloadWidth?: number;
 }
 
-const Nav: React.FC<Props> = ({ withoutToggleTheme, notConvertIntoToggleMenu }) => {
+const Nav: React.FC<Props> = ({
+    withoutToggleTheme,
+    notConvertIntoToggleMenu,
+    preloadWidth = 140
+}) => {
     const data: Data | null = useContext(NavDataContext);
     const dispatch = useDispatch();
     const isDarkMode: boolean = useSelector((state: RootState) => state.modeReducer.isDarkMode);
@@ -58,7 +63,7 @@ const Nav: React.FC<Props> = ({ withoutToggleTheme, notConvertIntoToggleMenu }) 
                     </Link>
                   )) : Array(3).fill('').map((_, i: number) => (
                     <SkeletonTheme key={i} color={isDarkMode ? "#fff" : "#000"}>
-                        <Skeleton width={140} />
+                        <Skeleton width={preloadWidth} />
                     </SkeletonTheme>
                   ))
               }
