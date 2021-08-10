@@ -25,7 +25,6 @@ const Header: React.FC = () => {
       enableBodyScroll(document);
     }
   }, [isNavActive]);
-  
 
     return (
         <>
