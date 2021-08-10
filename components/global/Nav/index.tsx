@@ -6,13 +6,13 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import classNames from 'classnames';
 
 // Contexts
-import { NavDataContext } from '../../../../pages';
+import { NavDataContext } from '../../../pages';
 
 // Types
-import { RootState } from '../../../../store/store';
+import { RootState } from '../../../store/store';
 
 // Actions
-import { changeMode } from '../../../../store/actions/mode';
+import { changeMode } from '../../../store/actions/mode';
 
 // Styles
 import styles from './styles.module.scss';

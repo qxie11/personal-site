@@ -1,0 +1,37 @@
+@import "styles/vars";
+@import "styles/mixins";
+
+.socialList {
+  display: flex;
+  gap: 50px;
+}
+
+.socialLink {
+  position: relative;
+  font-family: $montserrat;
+  font-size: 25px;
+  font-weight: 600;
+
+  @include breakpoint(568px) {
+    font-size: 17px;
+  }
+
+  &:before {
+    content: '';
+    width: 0;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: $shiraz;
+    transition: width 0.4s;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+}
