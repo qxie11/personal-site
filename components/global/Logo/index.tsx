@@ -9,9 +9,9 @@ const Logo: React.FC = () => {
 
     return (
         <Link href="/">
-            <a title="evgeniy.p" data-text="<evgeniy.p />" className={classNames(styles.glitch, {
+            <a title="evgeniy.v" data-text="<evgeniy.v />" className={classNames(styles.glitch, {
                 lightColor: isDarkMode,
-            })}>{`<evgeniy.p />`}</a>
+            })}>{`<evgeniy.v />`}</a>
         </Link>
     )
 }
