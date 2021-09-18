@@ -18,13 +18,13 @@ export default function Home({ data }) {
   const dispatch = useDispatch();
   useEffect(() => {
     const mode = localStorage.getItem('theme') === 'true' ? true : false;
-    if(mode) {
+    if (mode) {
       dispatch(changeMode(mode));
     }
-  }, [])
+  }, []);
 
   return (
-    <>  
+    <>
       <Head>
         <title>Evgeniy Vronskiy</title>
       </Head>
@@ -35,13 +35,13 @@ export default function Home({ data }) {
         </MainWrapper>
       </NavDataContext.Provider>
     </>
-  )
+  );
 }
 export async function getStaticProps() {
   try {
     const { data } = await axios.get(`${server}/api/hdome-data/`);
-    return { props: { data } }
+    return { props: { data } };
   } catch {
-    return { props: { data: {} } }
+    return { props: { data: {} } };
   }
 }

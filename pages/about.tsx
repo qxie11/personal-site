@@ -1,18 +1,15 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 // Components
-import MainWrapper from "../components/wrappers/MainWrapper";
+import MainWrapper from '../components/wrappers/MainWrapper';
 
 export default function About() {
-
   return (
     <>
       <Head>
         <title>Обо мне</title>
       </Head>
-      <MainWrapper>
-        123
-      </MainWrapper>
+      <MainWrapper>123</MainWrapper>
     </>
-  )
+  );
 }

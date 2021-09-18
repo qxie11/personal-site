@@ -4,7 +4,7 @@
 .homeIntro {
   padding: 200px 0;
   background: url('/images/backgrounds/light-bg.jpg') no-repeat center center;
-  background-size: cover; 
+  background-size: cover;
 
   @include breakpoint(568px) {
     padding: 120px 0;
@@ -13,7 +13,7 @@
 
 .darkBg {
   background: url('/images/backgrounds/dark-bg.jpg') no-repeat center center;
-  background-size: cover; 
+  background-size: cover;
 }
 
 .title,

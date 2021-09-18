@@ -1,5 +1,5 @@
-@import "../../../styles/vars";
-@import "../../../styles/mixins";
+@import '../../../styles/vars';
+@import '../../../styles/mixins';
 
 .nav {
   display: flex;
@@ -52,15 +52,16 @@
     fill: $white;
   }
 
-  &:hover  {
+  &:hover {
     path {
       fill: $shiraz;
     }
   }
 }
 
-.moon, .sun {
-  transition: .5s ease;
+.moon,
+.sun {
+  transition: 0.5s ease;
 }
 
 .moon {

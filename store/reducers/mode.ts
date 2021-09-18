@@ -1,17 +1,17 @@
-import { createReducer } from "@reduxjs/toolkit";
-import { changeMode } from "../actions/mode";
+import { createReducer } from '@reduxjs/toolkit';
+import { changeMode } from '../actions/mode';
 
 interface State {
-    isDarkMode: boolean;
+  isDarkMode: boolean;
 }
 
 const initialState: State = {
-    isDarkMode: false,
-}
+  isDarkMode: false,
+};
 
 export default createReducer(initialState, {
-    [changeMode.type]: function (state, { payload }) {
-        state.isDarkMode = payload ?? !state.isDarkMode;
-        localStorage.setItem('theme', state.isDarkMode.toString());
-    }
+  [changeMode.type]: function (state, { payload }) {
+    state.isDarkMode = payload ?? !state.isDarkMode;
+    localStorage.setItem('theme', state.isDarkMode.toString());
+  },
 });
