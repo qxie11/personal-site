@@ -4,20 +4,16 @@ import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
 // Types
-import { RootState } from '../../../store/store';
+import { RootState } from '../../../..//store/store';
 
 // Styles
+import { SocialLink } from '../../sections/Main/HomeIntro/constants';
 import styles from './styles.module.scss';
 
-export interface Link {
-  name: string;
-  link: string;
-  color: string;
+interface Props {
+  linkList: SocialLink[];
 }
 
-interface Props {
-  linkList: Link[];
-}
 const SocialList: React.FC<Props> = ({ linkList }) => {
   const isDarkMode: boolean = useSelector(
     (state: RootState) => state.modeReducer.isDarkMode
@@ -42,7 +38,7 @@ const SocialList: React.FC<Props> = ({ linkList }) => {
 
   return (
     <ul className={styles.socialList}>
-      {linkList?.map(({ name, link, color }: Link) => (
+      {linkList?.map(({ name, link, color }: SocialLink) => (
         <li key={link}>
           <a
             className={classNames(styles.socialLink, {

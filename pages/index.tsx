@@ -8,9 +8,9 @@ import { server } from '../config';
 import { changeMode } from '../store/actions/mode';
 
 // Components
-import MainWrapper from '../components/wrappers/MainWrapper';
-import HomeIntro from '../components/sections/Main/HomeIntro';
-import ExamplesOfProjects from '../components/sections/Main/ExamplesOfProjects';
+import MainWrapper from '../shared/components/partials/wrappers/MainWrapper';
+import HomeIntro from '../shared/components/sections/Main/HomeIntro';
+import ExamplesOfProjects from '../shared/components/sections/Main/ExamplesOfProjects';
 
 export const NavDataContext = createContext(null);
 

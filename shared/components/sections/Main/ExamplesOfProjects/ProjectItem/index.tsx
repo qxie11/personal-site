@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import classNames from 'classnames';
-import { RootState } from '../../../../../store/store';
+import { RootState } from '../../../../../../store/store';
 import Image from 'next/image';
 import styles from './styles.module.scss';
 import { IProjectItem } from '../index';

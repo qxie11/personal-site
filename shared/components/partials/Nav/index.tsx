@@ -1,39 +1,32 @@
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
-import { useContext, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import classNames from 'classnames';
 
-// Contexts
-import { NavDataContext } from '../../../pages';
+// Constants
+import { NavItem } from '../Header/constants';
 
 // Types
-import { RootState } from '../../../store/store';
+import { RootState } from '../../../../store/store';
 
 // Actions
-import { changeMode } from '../../../store/actions/mode';
+import { changeMode } from '../../../../store/actions/mode';
 
 // Styles
 import styles from './styles.module.scss';
 
-interface Data {
-  items: string[];
-  link: string[];
-}
-
 interface Props {
+  items: NavItem[];
   withoutToggleTheme?: true;
   notConvertIntoToggleMenu?: true;
-  preloadWidth?: number;
 }
 
 const Nav: React.FC<Props> = ({
+  items,
   withoutToggleTheme,
   notConvertIntoToggleMenu,
-  preloadWidth = 140,
 }) => {
-  const data: Data | null = useContext(NavDataContext);
   const dispatch = useDispatch();
   const isDarkMode: boolean = useSelector(
     (state: RootState) => state.modeReducer.isDarkMode
@@ -58,26 +51,18 @@ const Nav: React.FC<Props> = ({
           [styles.menuConvert]: !notConvertIntoToggleMenu,
         })}
       >
-        {data
-          ? data.items.map((item: string, i: number) => (
-              <Link href={data.link[i]} key={i + item}>
-                <a
-                  className={classNames('link', {
-                    lightColor: isDarkMode,
-                  })}
-                  ref={addLinkToRef}
-                >
-                  {item}
-                </a>
-              </Link>
-            ))
-          : Array(3)
-              .fill('')
-              .map((_, i: number) => (
-                <SkeletonTheme key={i} color={isDarkMode ? '#fff' : '#000'}>
-                  <Skeleton width={preloadWidth} />
-                </SkeletonTheme>
-              ))}
+        {items.map(({ text, link }) => (
+          <Link href={link} key={link}>
+            <a
+              className={classNames('link', {
+                lightColor: isDarkMode,
+              })}
+              ref={addLinkToRef}
+            >
+              {text}
+            </a>
+          </Link>
+        ))}
       </nav>
       {!withoutToggleTheme &&
         (!isDarkMode ? (

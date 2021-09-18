@@ -1,6 +1,6 @@
 // Components
-import Header from '../../global/Header';
-import Footer from '../../global/Footer';
+import Header from '../../Header';
+import Footer from '../../Footer';
 
 const MainWrapper = ({ children }) => {
   return (

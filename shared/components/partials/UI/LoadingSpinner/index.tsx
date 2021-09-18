@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import classNames from 'classnames';
 
 // Types
-import { RootState } from '../../../store/store';
+import { RootState } from '../../../../../store/store';
 
 // Styles
 import styles from './styles.module.scss';

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 // Components
-import MainWrapper from '../components/wrappers/MainWrapper';
+import MainWrapper from '../shared/components/partials/wrappers/MainWrapper';
 
 export default function About() {
   return (

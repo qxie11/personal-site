@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
 // Context
-import { NavDataContext } from '../../../pages';
+import { NavDataContext } from '../../../../pages';
 
 // Components
 import Nav from '../Nav';
@@ -12,7 +12,7 @@ import Nav from '../Nav';
 import styles from './styles.module.scss';
 
 // Types
-import { RootState } from '../../../store/store';
+import { RootState } from '../../../../store/store';
 
 const Footer: React.FC = () => {
   const isDarkMode: boolean = useSelector(

@@ -3,6 +3,9 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import gsap from 'gsap';
 import classNames from 'classnames';
 
+// Constants
+import { NAV_ITEMS } from './constants';
+
 // Components
 import Logo from '../Logo';
 import Nav from '../Nav';
@@ -41,7 +44,7 @@ const Header: React.FC = () => {
         })}
       >
         <Logo />
-        <Nav />
+        <Nav items={NAV_ITEMS} />
       </header>
       <div
         className={styles.menuBtn}
