@@ -4,9 +4,6 @@ import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import classNames from 'classnames';
 
-// Constants
-import { NavItem } from '../Header/constants';
-
 // Types
 import { RootState } from '../../../../store/store';
 
@@ -16,14 +13,17 @@ import { changeMode } from '../../../../store/actions/mode';
 // Styles
 import styles from './styles.module.scss';
 
+// Constants
+import { NAV_ITEMS, NAV_ITEMS_WITH_HOME } from './constants';
+
 interface Props {
-  items: NavItem[];
+  withHome?: true;
   withoutToggleTheme?: true;
   notConvertIntoToggleMenu?: true;
 }
 
 const Nav: React.FC<Props> = ({
-  items,
+  withHome,
   withoutToggleTheme,
   notConvertIntoToggleMenu,
 }) => {
@@ -32,6 +32,7 @@ const Nav: React.FC<Props> = ({
     (state: RootState) => state.modeReducer.isDarkMode
   );
 
+  const items = withHome ? NAV_ITEMS_WITH_HOME : NAV_ITEMS;
   const links = useRef<HTMLAnchorElement[]>([]);
 
   useEffect(() => {

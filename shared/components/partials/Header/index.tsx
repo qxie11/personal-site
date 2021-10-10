@@ -3,9 +3,6 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import gsap from 'gsap';
 import classNames from 'classnames';
 
-// Constants
-import { NAV_ITEMS } from './constants';
-
 // Components
 import Logo from '../Logo';
 import Nav from '../Nav';
@@ -38,13 +35,12 @@ const Header: React.FC = () => {
     <>
       <header
         ref={header}
-        className={classNames({
-          [styles.header]: true,
+        className={classNames(styles.header, {
           [styles.active]: isNavActive,
         })}
       >
         <Logo />
-        <Nav items={NAV_ITEMS} />
+        <Nav />
       </header>
       <div
         className={styles.menuBtn}
