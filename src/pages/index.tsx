@@ -2,7 +2,6 @@ import { createContext, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Head from 'next/head';
 import axios from 'axios';
-import { server } from '../config';
 
 // Actions
 import { changeMode } from '../store/actions/mode';
@@ -11,8 +10,6 @@ import { changeMode } from '../store/actions/mode';
 import MainWrapper from '../shared/components/partials/wrappers/MainWrapper';
 import HomeIntro from '../shared/components/sections/Main/HomeIntro';
 import ExamplesOfProjects from '../shared/components/sections/Main/ExamplesOfProjects';
-
-export const NavDataContext = createContext(null);
 
 export default function Home({ data }) {
   const dispatch = useDispatch();
@@ -28,20 +25,10 @@ export default function Home({ data }) {
       <Head>
         <title>Evgeniy Vronskiy</title>
       </Head>
-      <NavDataContext.Provider value={data.nav}>
-        <MainWrapper>
-          <HomeIntro data={data.intro} />
-          <ExamplesOfProjects data={data.projects} />
-        </MainWrapper>
-      </NavDataContext.Provider>
+      <MainWrapper>
+        <HomeIntro />
+        <ExamplesOfProjects />
+      </MainWrapper>
     </>
   );
-}
-export async function getStaticProps() {
-  try {
-    const { data } = await axios.get(`${server}/api/hdome-data/`);
-    return { props: { data } };
-  } catch {
-    return { props: { data: {} } };
-  }
 }

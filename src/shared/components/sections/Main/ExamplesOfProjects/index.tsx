@@ -9,20 +9,11 @@ import styles from './styles.module.scss';
 
 // Components
 import ProjectItem from './ProjectItem';
-import LoadingSpinner from '../../../partials/UI/LoadingSpinner';
 
-export interface IProjectItem {
-  title: string;
-  subtitle: string;
-  img: string;
-  url: string;
-}
+// Constants
+import { EXAMPLES_OF_PROJECTS } from './constants';
 
-interface Props {
-  data: IProjectItem[];
-}
-
-const ExamplesOfProjects: React.FC<Props> = ({ data }) => {
+const ExamplesOfProjects: React.FC = () => {
   const isDarkMode: boolean = useSelector(
     (state: RootState) => state.modeReducer.isDarkMode
   );
@@ -44,11 +35,11 @@ const ExamplesOfProjects: React.FC<Props> = ({ data }) => {
         </h2>
       </div>
       <ul className="projectItemsWrapper">
-        {data?.map((project: IProjectItem) => (
+        {EXAMPLES_OF_PROJECTS?.map((project) => (
           <li key={project.img}>
             <ProjectItem {...project} />
           </li>
-        )) || <LoadingSpinner />}
+        ))}
       </ul>
     </section>
   );

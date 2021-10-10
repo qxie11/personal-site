@@ -2,9 +2,6 @@ import { useContext } from 'react';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
-// Context
-import { NavDataContext } from '../../../../pages';
-
 // Components
 import Nav from '../Nav';
 
@@ -18,7 +15,6 @@ const Footer: React.FC = () => {
   const isDarkMode: boolean = useSelector(
     ({ modeReducer }: RootState) => modeReducer.isDarkMode
   );
-  const data = useContext(NavDataContext);
 
   return (
     <footer
@@ -43,7 +39,7 @@ const Footer: React.FC = () => {
         >
           vk.com/evgeniy_vronskiy
         </a>
-        <Nav withoutToggleTheme notConvertIntoToggleMenu preloadWidth={60} />
+        <Nav withoutToggleTheme notConvertIntoToggleMenu />
       </div>
     </footer>
   );
