@@ -9,6 +9,7 @@ import styles from './styles.module.scss';
 
 // Components
 import ProjectItem from './ProjectItem';
+import { Container } from '@partials/layout';
 
 // Constants
 import { EXAMPLES_OF_PROJECTS } from './constants';
@@ -25,7 +26,7 @@ const ExamplesOfProjects: React.FC = () => {
         darkBg: isDarkMode,
       })}
     >
-      <div className="container">
+      <Container>
         <h2
           className={cx('small-title', {
             lightColor: isDarkMode,
@@ -33,7 +34,7 @@ const ExamplesOfProjects: React.FC = () => {
         >
           Примеры работ
         </h2>
-      </div>
+      </Container>
       <ul className="projectItemsWrapper">
         {EXAMPLES_OF_PROJECTS?.map((project) => (
           <li key={project.img}>

@@ -1,7 +1,8 @@
 import Head from 'next/head';
 
 // Components
-import MainWrapper from '../shared/components/partials/wrappers/MainWrapper';
+import { MainWrapper } from '@partials/wrappers';
+import { ExamplesOfProjects } from '@sections/index';
 
 export default function About() {
   return (
@@ -9,7 +10,9 @@ export default function About() {
       <Head>
         <title>Обо мне</title>
       </Head>
-      <MainWrapper>123</MainWrapper>
+      <MainWrapper>
+        <ExamplesOfProjects></ExamplesOfProjects>
+      </MainWrapper>
     </>
   );
 }

@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import { RootState } from '@store/store';
 import Image from 'next/image';
+import { Container } from '@partials/layout';
 import { IProjectItem } from './types';
 import styles from './styles.module.scss';
 
@@ -26,7 +27,7 @@ const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
         height={300}
         quality={90}
       />
-      <div className="container">
+      <Container>
         <h3
           style={{ textShadow: `1px 1px 6px ${isDarkMode ? '#000' : '#fff'}` }}
           className={cx(styles.projectTitle, {
@@ -36,7 +37,7 @@ const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
           <span>{title}</span>
           {subtitle}
         </h3>
-      </div>
+      </Container>
     </div>
   );
 };

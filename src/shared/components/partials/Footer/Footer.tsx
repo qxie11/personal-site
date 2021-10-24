@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 // Components
 import { Nav } from '@components/partials';
+import { Container } from '@partials/layout';
 
 // Styles
 import styles from './styles.module.scss';
@@ -21,7 +22,7 @@ const Footer: React.FC = () => {
         darkBg: isDarkMode,
       })}
     >
-      <div className="container">
+      <Container>
         <h2
           className={cx('small-title', {
             lightColor: isDarkMode,
@@ -39,7 +40,7 @@ const Footer: React.FC = () => {
           vk.com/evgeniy_vronskiy
         </a>
         <Nav withoutToggleTheme notConvertIntoToggleMenu />
-      </div>
+      </Container>
     </footer>
   );
 };

@@ -41,14 +41,14 @@ const Header: React.FC = () => {
         <Logo />
         <Nav />
       </header>
-      <div
+      <button
         className={styles.menuBtn}
         onClick={() => setNavActive(!isNavActive)}
       >
         <span className={styles.menuBtnLine}></span>
         <span className={styles.menuBtnLine}></span>
         <span className={styles.menuBtnLine}></span>
-      </div>
+      </button>
     </>
   );
 };

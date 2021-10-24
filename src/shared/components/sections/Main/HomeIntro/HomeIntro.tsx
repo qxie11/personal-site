@@ -5,6 +5,7 @@ import gsap from 'gsap';
 
 // Components
 import { SocialList } from '@components/partials';
+import { Container } from '@components/partials/layout';
 
 // Constants
 import { SOCAIL_LINK_ITEMS } from './constants';
@@ -36,7 +37,7 @@ const HomeIntro: React.FC = () => {
         [styles.darkBg]: isDarkMode,
       })}
     >
-      <div className="container" ref={container}>
+      <Container ref={container}>
         <h1
           className={cx('title', styles.title, {
             lightColor: isDarkMode,
@@ -54,7 +55,7 @@ const HomeIntro: React.FC = () => {
           разработке, а также в обучении верстке сайтов.
         </p>
         <SocialList linkList={SOCAIL_LINK_ITEMS} />
-      </div>
+      </Container>
     </section>
   );
 };
