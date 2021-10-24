@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import gsap from 'gsap';
 
 // Components
-import SocialList from '../../../partials/SocialList';
+import SocialList from '@shared/components/partials/SocialList';
 
 // Constants
 import { SOCAIL_LINK_ITEMS } from './constants';
