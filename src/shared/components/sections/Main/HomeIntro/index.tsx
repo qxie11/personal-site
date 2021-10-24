@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import gsap from 'gsap';
 
@@ -32,13 +32,13 @@ const HomeIntro: React.FC = () => {
 
   return (
     <section
-      className={classNames(styles.homeIntro, {
+      className={cx(styles.homeIntro, {
         [styles.darkBg]: isDarkMode,
       })}
     >
       <div className="container" ref={container}>
         <h1
-          className={classNames('title', styles.title, {
+          className={cx('title', styles.title, {
             lightColor: isDarkMode,
           })}
         >
@@ -46,7 +46,7 @@ const HomeIntro: React.FC = () => {
           <br />я фрилансер, веб-разработчик
         </h1>
         <p
-          className={classNames('subtitle', styles.subtitle, {
+          className={cx('subtitle', styles.subtitle, {
             lightColor: isDarkMode,
           })}
         >

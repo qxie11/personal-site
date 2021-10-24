@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import gsap from 'gsap';
-import classNames from 'classnames';
+import cx from 'classnames';
 
 // Components
 import Logo from '../Logo';
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
     <>
       <header
         ref={header}
-        className={classNames(styles.header, {
+        className={cx(styles.header, {
           [styles.active]: isNavActive,
         })}
       >

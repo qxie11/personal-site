@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import classNames from 'classnames';
+import cx from 'classnames';
 
 // Types
 import { RootState } from '../../../../store/store';
@@ -48,14 +48,14 @@ const Nav: React.FC<Props> = ({
   return (
     <>
       <nav
-        className={classNames(styles.nav, {
+        className={cx(styles.nav, {
           [styles.menuConvert]: !notConvertIntoToggleMenu,
         })}
       >
         {items.map(({ text, link }) => (
           <Link href={link} key={link}>
             <a
-              className={classNames('link', {
+              className={cx('link', {
                 lightColor: isDarkMode,
               })}
               ref={addLinkToRef}

@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import classNames from 'classnames';
+import cx from 'classnames';
 
 // Types
 import { RootState } from '../../../../../store/store';
@@ -19,7 +19,7 @@ const LoadingSpinner: React.FC<Props> = ({ classes = [], ...rest }) => {
   return (
     <div
       {...rest}
-      className={classNames(styles.loadingSpinner, ...classes, {
+      className={cx(styles.loadingSpinner, ...classes, {
         [styles.light]: isDarkMode,
       })}
     ></div>

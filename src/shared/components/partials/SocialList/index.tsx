@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 import { useSelector } from 'react-redux';
 
 // Types
@@ -41,7 +41,7 @@ const SocialList: React.FC<Props> = ({ linkList }) => {
       {linkList?.map(({ name, link, color }: SocialLink) => (
         <li key={link}>
           <a
-            className={classNames(styles.socialLink, {
+            className={cx(styles.socialLink, {
               lightColor: isDarkMode,
             })}
             style={{ color }}

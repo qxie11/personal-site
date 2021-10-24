@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import classNames from 'classnames';
+import cx from 'classnames';
 import { RootState } from '../../../../../../store/store';
 import Image from 'next/image';
 import styles from './styles.module.scss';
@@ -12,7 +12,7 @@ const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
 
   return (
     <div
-      className={classNames(styles.projectItem, {
+      className={cx(styles.projectItem, {
         [styles.projectItemDark]: isDarkMode,
       })}
     >
@@ -29,7 +29,7 @@ const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
       <div className="container">
         <h3
           style={{ textShadow: `1px 1px 6px ${isDarkMode ? '#000' : '#fff'}` }}
-          className={classNames(styles.projectTitle, {
+          className={cx(styles.projectTitle, {
             lightColor: isDarkMode,
           })}
         >

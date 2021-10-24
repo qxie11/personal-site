@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './styles.module.scss';
-import classNames from 'classnames/bind';
+import cx from 'classnames/bind';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../store/store';
 
@@ -14,7 +14,7 @@ const Logo: React.FC = () => {
       <a
         title="evgeniy.v"
         data-text="<evgeniy.v />"
-        className={classNames(styles.glitch, {
+        className={cx(styles.glitch, {
           lightColor: isDarkMode,
         })}
       >{`<evgeniy.v />`}</a>

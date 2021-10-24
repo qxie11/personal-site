@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import classNames from 'classnames/bind';
+import cx from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
 // Components
@@ -18,20 +18,20 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className={classNames('section', {
+      className={cx('section', {
         darkBg: isDarkMode,
       })}
     >
       <div className="container">
         <h2
-          className={classNames('small-title', {
+          className={cx('small-title', {
             lightColor: isDarkMode,
           })}
         >
           Сотрудничество
         </h2>
         <a
-          className={classNames('link', styles.vkLink, {
+          className={cx('link', styles.vkLink, {
             lightColor: isDarkMode,
           })}
           target="_blank"

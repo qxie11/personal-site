@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import classNames from 'classnames';
+import cx from 'classnames';
 
 // Types
 import { RootState } from '../../../../../store/store';
@@ -21,13 +21,13 @@ const ExamplesOfProjects: React.FC = () => {
   return (
     <section
       id="works"
-      className={classNames(styles.projectExamples, {
+      className={cx(styles.projectExamples, {
         darkBg: isDarkMode,
       })}
     >
       <div className="container">
         <h2
-          className={classNames('small-title', {
+          className={cx('small-title', {
             lightColor: isDarkMode,
           })}
         >
