@@ -5,10 +5,10 @@ import gsap from 'gsap';
 import cx from 'classnames';
 
 // Types
-import { RootState } from '../../../../store/store';
+import { RootState } from '@store/store';
 
 // Actions
-import { changeMode } from '../../../../store/actions/mode';
+import { changeMode } from '@store/actions/mode';
 
 // Styles
 import styles from './styles.module.scss';

@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
-import { RootState } from '../../../../../../store/store';
+import { RootState } from '@store/store';
 import Image from 'next/image';
+import { IProjectItem } from './types';
 import styles from './styles.module.scss';
-import { IProjectItem } from '../index';
 
 const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
   const isDarkMode: boolean = useSelector(

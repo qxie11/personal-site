@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import gsap from 'gsap';
 
 // Components
-import SocialList from '@shared/components/partials/SocialList';
+import { SocialList } from '@components/partials';
 
 // Constants
 import { SOCAIL_LINK_ITEMS } from './constants';
@@ -13,7 +13,7 @@ import { SOCAIL_LINK_ITEMS } from './constants';
 import styles from './styles.module.scss';
 
 // Types
-import { RootState } from '../../../../../store/store';
+import { RootState } from '@store/store';
 
 const HomeIntro: React.FC = () => {
   const isDarkMode: boolean = useSelector(

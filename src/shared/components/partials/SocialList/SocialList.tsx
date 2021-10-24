@@ -4,10 +4,12 @@ import cx from 'classnames';
 import { useSelector } from 'react-redux';
 
 // Types
-import { RootState } from '../../../..//store/store';
+import { RootState } from '@store/store';
+
+// Constants
+import { SocialLink } from '@sections/Main/HomeIntro/constants';
 
 // Styles
-import { SocialLink } from '../../sections/Main/HomeIntro/constants';
 import styles from './styles.module.scss';
 
 interface Props {

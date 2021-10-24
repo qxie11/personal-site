@@ -4,8 +4,7 @@ import gsap from 'gsap';
 import cx from 'classnames';
 
 // Components
-import Logo from '../Logo';
-import Nav from '../Nav';
+import { Logo, Nav } from '@components/partials';
 
 // Styles
 import styles from './styles.module.scss';

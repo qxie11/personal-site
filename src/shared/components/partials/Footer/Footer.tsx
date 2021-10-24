@@ -1,15 +1,14 @@
-import { useContext } from 'react';
 import cx from 'classnames/bind';
 import { useSelector } from 'react-redux';
 
 // Components
-import Nav from '../Nav';
+import { Nav } from '@components/partials';
 
 // Styles
 import styles from './styles.module.scss';
 
 // Types
-import { RootState } from '../../../../store/store';
+import { RootState } from '@store/store';
 
 const Footer: React.FC = () => {
   const isDarkMode: boolean = useSelector(

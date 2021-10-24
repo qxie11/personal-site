@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import styles from './styles.module.scss';
-import cx from 'classnames/bind';
+import cx from 'classnames';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../../store/store';
+import { RootState } from '@store/store';
+import styles from './styles.module.scss';
 
 const Logo: React.FC = () => {
   const isDarkMode: boolean = useSelector(
