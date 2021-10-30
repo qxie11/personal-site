@@ -1,0 +1,11 @@
+@import 'src/styles/vars';
+
+.section {
+  padding-top: 400px;
+  padding-bottom: 400px;
+
+  &.withImage {
+    background: url(#{$imagePath}me-bg.jpg) top right / auto 100% no-repeat,
+      $black;
+  }
+}

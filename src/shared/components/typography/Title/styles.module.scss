@@ -1,0 +1,27 @@
+@import 'src/styles/mixins';
+@import 'src/styles/vars';
+
+.title {
+  font-size: 55px;
+  font-weight: 600;
+
+  @include breakpoint(658px) {
+    font-size: 30px;
+  }
+}
+
+.titleLight {
+  color: $white;
+}
+
+.small {
+  margin-bottom: 60px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.title,
+.small-title {
+  font-family: $montserrat;
+  line-height: 1.2;
+}
