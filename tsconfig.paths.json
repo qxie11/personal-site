@@ -3,6 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["./src/assets/*"],
+      "@icons/*": ["./src/assets/icons/*"],
+      "@images/*": ["./src/assets/images/*"],
       "@shared/*": ["./src/shared/*"],
       "@partials/*": ["./src/shared/components/partials/*"],
       "@sections/*": ["./src/shared/components/sections/*"],

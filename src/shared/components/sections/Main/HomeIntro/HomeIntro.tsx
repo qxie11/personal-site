@@ -6,6 +6,7 @@ import gsap from 'gsap';
 // Components
 import { SocialList } from '@components/partials';
 import { Container } from '@components/partials/layout';
+import { Title } from '@shared/components/typography';
 
 // Constants
 import { SOCAIL_LINK_ITEMS } from './constants';
@@ -38,14 +39,10 @@ const HomeIntro: React.FC = () => {
       })}
     >
       <Container ref={container}>
-        <h1
-          className={cx('title', styles.title, {
-            lightColor: isDarkMode,
-          })}
-        >
+        <Title classes={styles.title}>
           <span className={styles.titleSpan}>привет, меня зовут Евгений</span>
           <br />я фрилансер, веб-разработчик
-        </h1>
+        </Title>
         <p
           className={cx('subtitle', styles.subtitle, {
             lightColor: isDarkMode,

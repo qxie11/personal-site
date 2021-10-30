@@ -1,6 +1,14 @@
+// Colors
 $black: #000000;
 $shiraz: #b80929;
 $gray: #8d97a4;
 $white: #ffffff;
+
+// Typography
 $noto-sans: 'Noto Sans', 'Arial', sans-serif;
 $montserrat: 'Montserrat', 'Noto Sans', 'Arial', sans-serif;
+
+// Paths
+$assetsPath: '~/../../src/assets/';
+$imagePath: '#{$assetsPath}images/';
+$iconPath: '#{$assetsPath}icons/';

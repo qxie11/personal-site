@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 // Components
 import { MainWrapper } from '@partials/wrappers';
-import { ExamplesOfProjects } from '@sections/index';
+import { AboutIntro } from '@components/sections';
 
 export default function About() {
   return (
@@ -11,7 +11,7 @@ export default function About() {
         <title>Обо мне</title>
       </Head>
       <MainWrapper>
-        <ExamplesOfProjects></ExamplesOfProjects>
+        <AboutIntro />
       </MainWrapper>
     </>
   );

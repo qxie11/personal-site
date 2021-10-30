@@ -1,26 +1,28 @@
+import Images from '@assets/images';
+
 export const EXAMPLES_OF_PROJECTS = [
   {
     title: 'пользовательский сайт',
     subtitle: 'kinderheldin',
-    img: '/images/backgrounds/kinderheldin.jpg',
+    img: Images.kinderheldin,
     url: 'https://kinderheldin.de/',
   },
   {
     title: 'корпоротивный сайт',
     subtitle: 'faifly',
-    img: '/images/backgrounds/faifly.jpg',
+    img: Images.faifly,
     url: 'https://faifly.com/',
   },
   {
     title: 'пользовательский сайт',
     subtitle: 'lieferando',
-    img: '/images/backgrounds/lieferando.jpg',
+    img: Images.lieferando,
     url: 'https://www.lieferando.de/',
   },
   {
     title: 'пользовательский сайт',
     subtitle: 'stpierre-bru',
-    img: '/images/backgrounds/stpierre.jpg',
+    img: Images.stpierre,
     url: 'https://www.stpierre-bru.be/',
   },
 ];

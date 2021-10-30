@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 // Components
 import { Nav } from '@components/partials';
 import { Container } from '@partials/layout';
+import { Title } from '@shared/components/typography';
 
 // Styles
 import styles from './styles.module.scss';
@@ -23,13 +24,7 @@ const Footer: React.FC = () => {
       })}
     >
       <Container>
-        <h2
-          className={cx('small-title', {
-            lightColor: isDarkMode,
-          })}
-        >
-          Сотрудничество
-        </h2>
+        <Title small>Сотрудничество</Title>
         <a
           className={cx('link', styles.vkLink, {
             lightColor: isDarkMode,

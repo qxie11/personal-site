@@ -22,27 +22,6 @@ textarea {
   }
 }
 
-.title {
-  font-size: 55px;
-  font-weight: 600;
-
-  @include breakpoint(658px) {
-    font-size: 30px;
-  }
-}
-
-.small-title {
-  margin-bottom: 60px;
-  font-size: 22px;
-  font-weight: 400;
-}
-
-.title,
-.small-title {
-  font-family: $montserrat;
-  line-height: 1.2;
-}
-
 .subtitle {
   margin-bottom: 15px;
   font-size: 22px;

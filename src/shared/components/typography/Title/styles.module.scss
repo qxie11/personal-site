@@ -3,7 +3,6 @@
 
 .title {
   font-size: 55px;
-  font-weight: 600;
 
   @include breakpoint(658px) {
     font-size: 30px;
@@ -14,14 +13,14 @@
   color: $white;
 }
 
-.small {
-  margin-bottom: 60px;
+.titleSmall {
   font-size: 22px;
   font-weight: 400;
 }
 
 .title,
-.small-title {
+.titleSmall {
+  margin: 0 0 30px;
   font-family: $montserrat;
   line-height: 1.2;
 }
