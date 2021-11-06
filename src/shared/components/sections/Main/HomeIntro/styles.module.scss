@@ -2,13 +2,9 @@
 @import 'src/styles/mixins';
 
 .homeIntro {
-  padding: 300px 0;
+  padding: clamp(120px, 18vw, 300px) 0;
   background: url(#{$imagePath}light-bg.jpg) no-repeat center center;
   background-size: cover;
-
-  @include breakpoint(568px) {
-    padding: 120px 0;
-  }
 }
 
 .darkBg {
@@ -23,6 +19,6 @@
 }
 
 .titleSpan {
-  font-size: 36px;
+  font-size: 2rem;
   font-weight: 400;
 }

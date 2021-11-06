@@ -12,3 +12,9 @@ $montserrat: 'Montserrat', 'Noto Sans', 'Arial', sans-serif;
 $assetsPath: '~/../../src/assets/';
 $imagePath: '#{$assetsPath}images/';
 $iconPath: '#{$assetsPath}icons/';
+
+// Breakpoints
+$lg: 1200px;
+$md: 992px;
+$sm: 768px;
+$xsm: 576px;
