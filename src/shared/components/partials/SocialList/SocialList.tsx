@@ -3,8 +3,11 @@ import { useEffect, useRef } from 'react';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 
-// Types
-import { RootState } from '@store/store';
+// Components
+import { Anchor } from '@components/typography';
+
+// Selectors
+import modeSelectors from '@store/selectors/modeSelectors';
 
 // Constants
 import { SocialLink } from '@sections/Main/HomeIntro/constants';
@@ -17,9 +20,7 @@ interface Props {
 }
 
 const SocialList: React.FC<Props> = ({ linkList }) => {
-  const isDarkMode: boolean = useSelector(
-    (state: RootState) => state.modeReducer.isDarkMode
-  );
+  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   const links = useRef<HTMLAnchorElement[]>([]);
 
@@ -42,17 +43,17 @@ const SocialList: React.FC<Props> = ({ linkList }) => {
     <ul className={styles.socialList}>
       {linkList?.map(({ name, link, color }: SocialLink) => (
         <li key={link}>
-          <a
-            className={cx(styles.socialLink, {
-              lightColor: isDarkMode,
-            })}
+          <Anchor
+            classes={styles.socialLink}
+            external
+            underlineAnimation
             style={{ color }}
             target="_blank"
             href={link}
             ref={addLinkToRef}
           >
             {name}
-          </a>
+          </Anchor>
         </li>
       ))}
     </ul>

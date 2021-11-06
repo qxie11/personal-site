@@ -1,0 +1,38 @@
+@import 'src/styles/vars';
+
+.link {
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $shiraz;
+  }
+}
+
+.light {
+  color: $white;
+}
+
+.underlineAnimation {
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 0;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-radius: 3px;
+    background: $shiraz;
+    transition: width 0.4s;
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+}

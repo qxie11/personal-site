@@ -1,10 +1,10 @@
 import React, { HTMLAttributes } from 'react';
 import cx from 'classnames';
+import { useSelector } from 'react-redux';
 import { Typography } from 'antd';
 import { TitleProps } from 'antd/lib/typography/Title';
+import modeSelectors from '@store/selectors/modeSelectors';
 import styles from './styles.module.scss';
-import { useSelector } from 'react-redux';
-import { RootState } from '@store/store';
 
 const { Title: AntdTitle } = Typography;
 
@@ -27,9 +27,8 @@ const Title: React.FC<Props> = ({
   middle,
   ...rest
 }) => {
-  const isDarkMode: boolean = useSelector(
-    (state: RootState) => state.modeReducer.isDarkMode
-  );
+  const isDarkMode: boolean = useSelector(modeSelectors.selectCurrentTheme);
+
   return (
     <AntdTitle
       className={cx(

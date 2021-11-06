@@ -11,16 +11,14 @@ import { Title } from '@shared/components/typography';
 // Constants
 import { SOCAIL_LINK_ITEMS } from './constants';
 
+// Selectors
+import modeSelectors from '@store/selectors/modeSelectors';
+
 // Styles
 import styles from './styles.module.scss';
 
-// Types
-import { RootState } from '@store/store';
-
 const HomeIntro: React.FC = () => {
-  const isDarkMode: boolean = useSelector(
-    (state: RootState) => state.modeReducer.isDarkMode
-  );
+  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
   const container = useRef<HTMLDivElement>();
 
   useEffect(() => {

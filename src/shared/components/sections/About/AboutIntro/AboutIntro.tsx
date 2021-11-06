@@ -1,17 +1,17 @@
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
-import { RootState } from '@store/store';
 
 // Components
 import { Container } from '@partials/layout';
+
+// Selectors
+import modeSelectors from '@store/selectors/modeSelectors';
 
 // Styles
 import styles from './styles.module.scss';
 
 const AboutIntro: React.FC = () => {
-  const isDarkMode: boolean = useSelector(
-    (state: RootState) => state.modeReducer.isDarkMode
-  );
+  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
     <section

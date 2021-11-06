@@ -1,5 +1,4 @@
-import { createReducer } from '@reduxjs/toolkit';
-import { changeMode } from '../actions/mode';
+import { createSlice } from '@reduxjs/toolkit';
 
 interface State {
   isDarkMode: boolean;
@@ -9,9 +8,18 @@ const initialState: State = {
   isDarkMode: false,
 };
 
-export default createReducer(initialState, {
-  [changeMode.type]: function (state, { payload }) {
-    state.isDarkMode = payload ?? !state.isDarkMode;
-    localStorage.setItem('theme', state.isDarkMode.toString());
+const modeSlice = createSlice({
+  name: 'mode',
+  initialState,
+  reducers: {
+    switchMode(state) {
+      state.isDarkMode = !state.isDarkMode;
+    },
+    setMode(state, action) {
+      state.isDarkMode = action.payload;
+    },
   },
 });
+
+export const { switchMode, setMode } = modeSlice.actions;
+export default modeSlice.reducer;

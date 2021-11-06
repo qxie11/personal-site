@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
 
-// Types
-import { RootState } from '@store/store';
+// Selectors
+import modeSelectors from '@store/selectors/modeSelectors';
 
 // Components
 import ProjectItem from './ProjectItem';
@@ -13,9 +13,7 @@ import { Title } from '@shared/components/typography';
 import { EXAMPLES_OF_PROJECTS } from './constants';
 
 const ExamplesOfProjects: React.FC = () => {
-  const isDarkMode: boolean = useSelector(
-    (state: RootState) => state.modeReducer.isDarkMode
-  );
+  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
     <section
@@ -25,7 +23,9 @@ const ExamplesOfProjects: React.FC = () => {
       })}
     >
       <Container>
-        <Title small>Примеры работ</Title>
+        <Title level={2} small>
+          Примеры работ
+        </Title>
       </Container>
       <ul>
         {EXAMPLES_OF_PROJECTS?.map((project) => (

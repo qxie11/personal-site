@@ -1,20 +1,22 @@
-import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import cx from 'classnames';
 
-// Types
-import { RootState } from '@store/store';
-
 // Actions
-import { changeMode } from '@store/actions/mode';
+import { switchMode } from '@store/reducers/mode';
 
-// Styles
-import styles from './styles.module.scss';
+// Components
+import { Anchor } from '@shared/components/typography';
 
 // Constants
 import { NAV_ITEMS, NAV_ITEMS_WITH_HOME } from './constants';
+
+// Selectors
+import modeSelectors from '@store/selectors/modeSelectors';
+
+// Styles
+import styles from './styles.module.scss';
 
 interface Props {
   withHome?: true;
@@ -28,9 +30,7 @@ const Nav: React.FC<Props> = ({
   notConvertIntoToggleMenu,
 }) => {
   const dispatch = useDispatch();
-  const isDarkMode: boolean = useSelector(
-    (state: RootState) => state.modeReducer.isDarkMode
-  );
+  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   const items = withHome ? NAV_ITEMS_WITH_HOME : NAV_ITEMS;
   const links = useRef<HTMLAnchorElement[]>([]);
@@ -53,26 +53,19 @@ const Nav: React.FC<Props> = ({
         })}
       >
         {items.map(({ text, link }) => (
-          <Link href={link} key={link}>
-            <a
-              className={cx('link', {
-                lightColor: isDarkMode,
-              })}
-              ref={addLinkToRef}
-            >
-              {text}
-            </a>
-          </Link>
+          <Anchor underlineAnimation href={link} key={link} ref={addLinkToRef}>
+            {text}
+          </Anchor>
         ))}
       </nav>
-      {!withoutToggleTheme &&
-        (!isDarkMode ? (
-          <button
-            className={styles.toggle_mode_btn}
-            onClick={() => dispatch(changeMode())}
-          >
+      {!withoutToggleTheme && (
+        <button
+          className={styles.toggle_mode_btn}
+          onClick={() => dispatch(switchMode())}
+        >
+          {!isDarkMode ? (
             <svg
-              className={`${styles.svg} ${styles.moon}`}
+              className={cx(styles.svg, styles.moon)}
               viewBox="0 0 312.999 312.999"
             >
               <path
@@ -85,12 +78,7 @@ const Nav: React.FC<Props> = ({
                 c16.8,0,32.8-2.8,47.6-8.4c5.2-2,10.4-4,15.2-6.4C274,232.453,260.8,248.853,244.4,261.653z"
               />
             </svg>
-          </button>
-        ) : (
-          <button
-            className={styles.toggle_mode_btn}
-            onClick={() => dispatch(changeMode())}
-          >
+          ) : (
             <svg
               className={`${styles.svg} ${styles.sun}`}
               fill="white"
@@ -123,8 +111,9 @@ const Nav: React.FC<Props> = ({
               <path d="M80.4,221.6c-3.6-4-10.4-4-14.4,0l-22,22c-4,4-4,10.4,0,14.4s10.4,4,14.4,0l22-22C84.4,232,84.4,225.6,80.4,221.6z" />
               <path d="M80.4,66.4l-22-22c-4-4-10.4-4-14.4,0s-4,10.4,0,14.4l22,22c4,4,10.4,4,14.4,0S84.4,70.4,80.4,66.4z" />
             </svg>
-          </button>
-        ))}
+          )}
+        </button>
+      )}
     </>
   );
 };

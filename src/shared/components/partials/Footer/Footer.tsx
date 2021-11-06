@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 // Components
 import { Nav } from '@components/partials';
 import { Container } from '@partials/layout';
-import { Title } from '@shared/components/typography';
+import { Title, Anchor } from '@shared/components/typography';
 
 // Styles
 import styles from './styles.module.scss';
@@ -14,7 +14,7 @@ import { RootState } from '@store/store';
 
 const Footer: React.FC = () => {
   const isDarkMode: boolean = useSelector(
-    ({ modeReducer }: RootState) => modeReducer.isDarkMode
+    ({ mode }: RootState) => mode.isDarkMode
   );
 
   return (
@@ -24,16 +24,16 @@ const Footer: React.FC = () => {
       })}
     >
       <Container>
-        <Title small>Сотрудничество</Title>
-        <a
-          className={cx('link', styles.vkLink, {
-            lightColor: isDarkMode,
-          })}
+        <Title level={2} small>
+          Сотрудничество
+        </Title>
+        <Anchor
+          classes={styles.vkLink}
           target="_blank"
           href="https://vk.com/evgeniy_vronskiy"
         >
           vk.com/evgeniy_vronskiy
-        </a>
+        </Anchor>
         <Nav withoutToggleTheme notConvertIntoToggleMenu />
       </Container>
     </footer>

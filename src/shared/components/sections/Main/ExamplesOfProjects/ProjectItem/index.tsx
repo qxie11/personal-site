@@ -1,15 +1,21 @@
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
-import { RootState } from '@store/store';
 import Image from 'next/image';
+
+// Components
 import { Container } from '@partials/layout';
+
+// Selectors
+import modeSelectors from '@store/selectors/modeSelectors';
+
+// Types
 import { IProjectItem } from './types';
+
+// Styles
 import styles from './styles.module.scss';
 
 const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
-  const isDarkMode: boolean = useSelector(
-    (state: RootState) => state.modeReducer.isDarkMode
-  );
+  const isDarkMode: boolean = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
     <div
