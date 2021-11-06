@@ -3,6 +3,11 @@ import cx from 'classnames';
 
 // Components
 import { Container } from '@partials/layout';
+import { Text, Title } from '@components/typography';
+import { SocialList } from '@components/partials';
+
+// Constants
+import { SOCAIL_LINK_ITEMS } from '@shared/constants';
 
 // Selectors
 import modeSelectors from '@store/selectors/modeSelectors';
@@ -19,7 +24,14 @@ const AboutIntro: React.FC = () => {
         [styles.withImage]: isDarkMode,
       })}
     >
-      <Container>123</Container>
+      <Container>
+        <Title>Обо мне</Title>
+        <Text classes={styles.info}>
+          я React / Front-end разработчик, верстаю сайты различной сложности. В
+          свободное время занимаюсь репетиторством
+        </Text>
+        <SocialList linkList={SOCAIL_LINK_ITEMS} />
+      </Container>
     </section>
   );
 };

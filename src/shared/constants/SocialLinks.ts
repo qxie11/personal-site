@@ -1,10 +1,6 @@
-export interface SocialLink {
-  name: string;
-  link: string;
-  color: string;
-}
+import { SocialLink } from '@shared/types';
 
-export const SOCAIL_LINK_ITEMS: SocialLink[] = [
+const SOCAIL_LINK_ITEMS: SocialLink[] = [
   {
     name: 'telegram',
     link: 'https://t.me/dsxxxx',
@@ -21,3 +17,5 @@ export const SOCAIL_LINK_ITEMS: SocialLink[] = [
     color: '#333333',
   },
 ];
+
+export default SOCAIL_LINK_ITEMS;

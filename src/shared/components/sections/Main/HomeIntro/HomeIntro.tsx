@@ -6,10 +6,10 @@ import gsap from 'gsap';
 // Components
 import { SocialList } from '@components/partials';
 import { Container } from '@components/partials/layout';
-import { Title } from '@shared/components/typography';
+import { Title, Text } from '@shared/components/typography';
 
 // Constants
-import { SOCAIL_LINK_ITEMS } from './constants';
+import { SOCAIL_LINK_ITEMS } from '@shared/constants';
 
 // Selectors
 import modeSelectors from '@store/selectors/modeSelectors';
@@ -41,14 +41,10 @@ const HomeIntro: React.FC = () => {
           <span className={styles.titleSpan}>привет, меня зовут Евгений</span>
           <br />я фрилансер, веб-разработчик
         </Title>
-        <p
-          className={cx('subtitle', styles.subtitle, {
-            lightColor: isDarkMode,
-          })}
-        >
+        <Text classes={styles.subtitle}>
           разрабатываю веб-сайты более четырех лет, за плечами большой опыт в
           разработке, а также в обучении верстке сайтов.
-        </p>
+        </Text>
         <SocialList linkList={SOCAIL_LINK_ITEMS} />
       </Container>
     </section>

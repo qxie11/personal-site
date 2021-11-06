@@ -1,11 +1,19 @@
 @import 'src/styles/vars';
+@import 'src/styles/mixins';
 
 .section {
-  padding-top: 400px;
-  padding-bottom: 400px;
+  padding: clamp(250px, 20vw, 400px) 0;
 
   &.withImage {
     background: url(#{$imagePath}me-bg.jpg) top right / auto 100% no-repeat,
       $black;
+
+    @include breakpoint($lg) {
+      background: $black;
+    }
   }
+}
+
+.info {
+  max-width: 560px;
 }

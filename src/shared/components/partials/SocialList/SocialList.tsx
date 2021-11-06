@@ -1,16 +1,11 @@
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
-import cx from 'classnames';
-import { useSelector } from 'react-redux';
 
 // Components
 import { Anchor } from '@components/typography';
 
-// Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
-
 // Constants
-import { SocialLink } from '@sections/Main/HomeIntro/constants';
+import { SocialLink } from '@shared/types';
 
 // Styles
 import styles from './styles.module.scss';
@@ -20,8 +15,6 @@ interface Props {
 }
 
 const SocialList: React.FC<Props> = ({ linkList }) => {
-  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
-
   const links = useRef<HTMLAnchorElement[]>([]);
 
   useEffect(() => {
