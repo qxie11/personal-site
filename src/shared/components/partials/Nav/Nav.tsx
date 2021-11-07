@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useRef, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import gsap from 'gsap';
 import cx from 'classnames';
 
@@ -11,6 +12,7 @@ import { Anchor } from '@shared/components/typography';
 
 // Constants
 import { NAV_ITEMS, NAV_ITEMS_WITH_HOME } from './constants';
+import { PAGES } from '@shared/constants';
 
 // Selectors
 import modeSelectors from '@store/selectors/modeSelectors';
@@ -19,20 +21,20 @@ import modeSelectors from '@store/selectors/modeSelectors';
 import styles from './styles.module.scss';
 
 interface Props {
-  withHome?: true;
   withoutToggleTheme?: true;
   notConvertIntoToggleMenu?: true;
 }
 
 const Nav: React.FC<Props> = ({
-  withHome,
   withoutToggleTheme,
   notConvertIntoToggleMenu,
 }) => {
   const dispatch = useDispatch();
+  const { pathname } = useRouter();
+
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
-  const items = withHome ? NAV_ITEMS_WITH_HOME : NAV_ITEMS;
+  const items = pathname !== PAGES.HOME ? NAV_ITEMS_WITH_HOME : NAV_ITEMS;
   const links = useRef<HTMLAnchorElement[]>([]);
 
   useEffect(() => {

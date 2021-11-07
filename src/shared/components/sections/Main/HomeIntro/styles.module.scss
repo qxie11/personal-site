@@ -1,7 +1,7 @@
 @import 'src/styles/vars';
 @import 'src/styles/mixins';
 
-.homeIntro {
+.section {
   padding: clamp(200px, 18vw, 300px) 0;
   background: url(#{$imagePath}light-bg.jpg) no-repeat center center;
   background-size: cover;

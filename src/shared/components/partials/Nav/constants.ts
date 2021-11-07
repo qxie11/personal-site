@@ -1,3 +1,5 @@
+import { PAGES } from '@shared/constants';
+
 export type NavItem = {
   text: string;
   link: string;
@@ -6,22 +8,22 @@ export type NavItem = {
 export const NAV_ITEMS: NavItem[] = [
   {
     text: 'обо мне',
-    link: '/about',
+    link: PAGES.ABOUT,
   },
   {
     text: 'менторство',
-    link: '/consult',
+    link: PAGES.CONSULT,
   },
   {
     text: 'работы',
-    link: '#works',
+    link: '/#works',
   },
 ];
 
 export const NAV_ITEMS_WITH_HOME: NavItem[] = [
   {
     text: 'главная',
-    link: '/',
+    link: PAGES.HOME,
   },
   ...NAV_ITEMS,
 ];

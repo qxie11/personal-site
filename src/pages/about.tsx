@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 // Components
 import { MainWrapper } from '@partials/wrappers';
-import { AboutIntro } from '@components/sections';
+import { AboutIntro, AboutInfo } from '@components/sections';
 
 export default function About() {
   return (
@@ -12,6 +12,7 @@ export default function About() {
       </Head>
       <MainWrapper>
         <AboutIntro />
+        <AboutInfo />
       </MainWrapper>
     </>
   );

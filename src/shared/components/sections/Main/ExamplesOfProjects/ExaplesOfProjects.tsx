@@ -1,29 +1,17 @@
-import { useSelector } from 'react-redux';
-import cx from 'classnames';
-
-// Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
-
 // Components
 import ProjectItem from './ProjectItem';
 import { Container } from '@partials/layout';
 import { Title } from '@shared/components/typography';
+import { Section } from '@components/partials';
 
 // Constants
 import { EXAMPLES_OF_PROJECTS } from './constants';
 
 const ExamplesOfProjects: React.FC = () => {
-  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
-
   return (
-    <section
-      id="works"
-      className={cx({
-        darkBg: isDarkMode,
-      })}
-    >
+    <Section id="works">
       <Container>
-        <Title level={2} small>
+        <Title level={2} middle>
           Примеры работ
         </Title>
       </Container>
@@ -34,7 +22,7 @@ const ExamplesOfProjects: React.FC = () => {
           </li>
         ))}
       </ul>
-    </section>
+    </Section>
   );
 };
 

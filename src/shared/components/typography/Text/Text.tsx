@@ -1,5 +1,5 @@
+import { ForwardedRef, forwardRef, HTMLAttributes } from 'react';
 import { useSelector } from 'react-redux';
-import { HTMLAttributes } from 'react';
 import cx from 'classnames';
 
 // Selectors
@@ -10,21 +10,25 @@ import styles from './styles.module.scss';
 
 interface Props extends HTMLAttributes<HTMLParagraphElement> {
   classes?: string | string[];
+  ref?: ForwardedRef<HTMLParagraphElement>;
 }
 
-const Text: React.FC<Props> = ({ children, classes, ...rest }) => {
-  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
+const Text: React.FC<Props> = forwardRef(
+  ({ children, classes, ...rest }, ref) => {
+    const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
-  return (
-    <p
-      className={cx(styles.text, classes, {
-        [styles.light]: isDarkMode,
-      })}
-      {...rest}
-    >
-      {children}
-    </p>
-  );
-};
+    return (
+      <p
+        className={cx(styles.text, classes, {
+          [styles.light]: isDarkMode,
+        })}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </p>
+    );
+  }
+);
 
 export default Text;

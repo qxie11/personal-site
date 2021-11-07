@@ -1,0 +1,35 @@
+@import 'src/styles/vars';
+
+.box {
+  padding: 2rem 0;
+  border-radius: 20px;
+  background: $athens-gray;
+  box-shadow: 16px 16px 32px rgba($black, 0.15);
+
+  &.darkMode {
+    background: $mine-shaft;
+  }
+}
+
+.wrapper {
+  width: 90%;
+  margin-left: auto;
+}
+
+$leftListGap: 1.5rem;
+
+.listItem {
+  position: relative;
+  margin-left: $leftListGap;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -$leftListGap;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    background: $shiraz;
+    border-radius: 50%;
+  }
+}

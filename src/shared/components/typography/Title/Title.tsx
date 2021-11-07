@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { ForwardedRef, forwardRef, HTMLAttributes } from 'react';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import { Typography } from 'antd';
@@ -17,34 +17,31 @@ interface Props extends TitleProps, HTMLAttributes<HTMLHeadingElement> {
   onClick?: (
     e?: React.MouseEvent<HTMLHeadingElement, MouseEvent> | undefined
   ) => void;
+  ref?: ForwardedRef<HTMLHeadingElement>;
 }
 
-const Title: React.FC<Props> = ({
-  children,
-  classes,
-  light,
-  small,
-  middle,
-  ...rest
-}) => {
-  const isDarkMode: boolean = useSelector(modeSelectors.selectCurrentTheme);
+const Title: React.FC<Props> = forwardRef(
+  ({ children, classes, light, small, middle, ...rest }, ref) => {
+    const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
-  return (
-    <AntdTitle
-      className={cx(
-        {
-          [styles.title]: !light && !small,
-          [styles.titleLight]: isDarkMode,
-          [styles.titleSmall]: small,
-          [styles.titleMiddle]: middle,
-        },
-        classes
-      )}
-      {...rest}
-    >
-      {children}
-    </AntdTitle>
-  );
-};
+    return (
+      <AntdTitle
+        className={cx(
+          {
+            [styles.title]: !light && !small,
+            [styles.titleLight]: isDarkMode,
+            [styles.titleSmall]: small,
+            [styles.titleMiddle]: middle,
+          },
+          classes
+        )}
+        ref={ref}
+        {...rest}
+      >
+        {children}
+      </AntdTitle>
+    );
+  }
+);
 
 export default Title;

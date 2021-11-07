@@ -9,12 +9,21 @@
   color: $white;
 }
 
-.titleSmall {
+.titleMiddle {
   font-size: 1.6rem;
+}
+
+.titleSmall {
+  font-size: 1.2rem;
+}
+
+.titleMiddle,
+.titleSmall {
   font-weight: 400;
 }
 
 .title,
+.titleMiddle,
 .titleSmall {
   margin: 0 0 30px;
   font-family: $montserrat;
