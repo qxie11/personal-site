@@ -1,5 +1,12 @@
+@import 'src/styles/mixins';
+@import 'src/styles/vars';
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 4rem;
+
+  @include breakpoint($sm) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }

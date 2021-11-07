@@ -10,6 +10,9 @@ import { setMode } from '@store/reducers/mode';
 // Components
 import { Header, Footer } from '@components/partials';
 
+// Styles
+import styles from './styles.module.scss';
+
 const MainWrapper = ({ children }) => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
@@ -27,11 +30,11 @@ const MainWrapper = ({ children }) => {
   }, [isDarkMode]);
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <Header />
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 
