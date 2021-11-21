@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import dynamic from 'next/dynamic';
-
-// Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
 
 // Actions
 import { setMode } from '@store/reducers/mode';
@@ -18,8 +15,6 @@ const Header = dynamic(() => import('@components/partials/Header/Header'), {
 import styles from './styles.module.scss';
 
 const MainWrapper = ({ children }) => {
-  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
-
   const dispatch = useDispatch();
   useEffect(() => {
     const mode = localStorage.getItem('theme') === 'true' ? true : false;
@@ -28,10 +23,6 @@ const MainWrapper = ({ children }) => {
       dispatch(setMode(mode));
     }
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem('theme', isDarkMode.toString());
-  }, [isDarkMode]);
 
   return (
     <div className={styles.wrapper}>

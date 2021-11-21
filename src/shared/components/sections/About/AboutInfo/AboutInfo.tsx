@@ -17,7 +17,7 @@ const AboutInfo: React.FC = () => (
       </Title>
       <div className={styles.wrapper}>
         {INFORMATION_DATA.map((data) => (
-          <InfoBox {...data} />
+          <InfoBox key={data.title} {...data} />
         ))}
       </div>
     </Container>

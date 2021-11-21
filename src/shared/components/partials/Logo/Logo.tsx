@@ -12,7 +12,7 @@ import modeSelectors from '@store/selectors/modeSelectors';
 import styles from './styles.module.scss';
 
 const Logo: React.FC = () => {
-  const isDarkMode: boolean = useSelector(modeSelectors.selectCurrentTheme);
+  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
     <Link href={PAGES.HOME}>

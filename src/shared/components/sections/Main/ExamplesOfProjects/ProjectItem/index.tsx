@@ -15,7 +15,7 @@ import { IProjectItem } from './types';
 import styles from './styles.module.scss';
 
 const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
-  const isDarkMode: boolean = useSelector(modeSelectors.selectCurrentTheme);
+  const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
     <div
