@@ -1,11 +1,15 @@
+import { store } from '@store/store';
 import { RootState } from '@store/store';
+import { createSelector } from '@reduxjs/toolkit';
 
-const selectMode = (state: RootState) => state.mode;
+const selectState = (state: RootState = store.getState()) => state.mode;
 
-const selectCurrentTheme = (state: RootState) => state.mode.isDarkMode;
+const selectCurrentTheme = createSelector(
+  selectState,
+  (state) => state.isDarkMode
+);
 
 const modeSelectors = {
-  selectMode,
   selectCurrentTheme,
 };
 
