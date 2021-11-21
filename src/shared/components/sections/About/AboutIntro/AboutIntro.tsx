@@ -25,12 +25,12 @@ const AboutIntro: React.FC = () => {
   }, []);
 
   return (
-    <Section classes={styles.section} darkModeClass={styles.withImage}>
+    <Section className={styles.section} darkModeClass={styles.withImage}>
       <Container>
         <Title ref={(title) => infoArray.current.push(title)}>Обо мне</Title>
         <Text
           ref={(text) => infoArray.current.push(text)}
-          classes={styles.info}
+          className={styles.info}
         >
           я React / Front-end разработчик, верстаю сайты различной сложности. В
           свободное время занимаюсь репетиторством

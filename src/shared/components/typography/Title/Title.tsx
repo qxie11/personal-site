@@ -10,7 +10,7 @@ const { Title: AntdTitle } = Typography;
 
 interface Props extends TitleProps, HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode;
-  classes?: string | string[];
+  className?: string;
   light?: boolean;
   small?: boolean;
   middle?: boolean;
@@ -21,7 +21,7 @@ interface Props extends TitleProps, HTMLAttributes<HTMLHeadingElement> {
 }
 
 const Title: React.FC<Props> = forwardRef(
-  ({ children, classes, light, small, middle, ...rest }, ref) => {
+  ({ children, className, light, small, middle, ...rest }, ref) => {
     const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
     return (
@@ -33,7 +33,7 @@ const Title: React.FC<Props> = forwardRef(
             [styles.titleSmall]: small,
             [styles.titleMiddle]: middle,
           },
-          classes
+          className
         )}
         ref={ref}
         {...rest}

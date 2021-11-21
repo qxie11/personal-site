@@ -14,19 +14,19 @@ interface Props extends LinkProps, HTMLAttributes<HTMLAnchorElement> {
   target?: string;
   light?: boolean;
   external?: boolean;
-  classes?: string | string[];
+  className?: string;
   underlineAnimation?: boolean;
   ref?: ForwardedRef<HTMLAnchorElement>;
 }
 
 const Anchor: React.FC<Props> = React.forwardRef(
   (
-    { children, classes, light, external, underlineAnimation, href, ...rest },
+    { children, className, light, external, underlineAnimation, href, ...rest },
     ref
   ) => {
     const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
-    const classNames = cx(styles.link, classes, {
+    const classNames = cx(styles.link, className, {
       [styles.underlineAnimation]: underlineAnimation,
       [styles.light]: isDarkMode,
     });

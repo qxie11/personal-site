@@ -37,7 +37,7 @@ const SocialList: React.FC<Props> = ({ linkList }) => {
       {linkList?.map(({ name, link, color }: SocialLink) => (
         <li key={link}>
           <Anchor
-            classes={styles.socialLink}
+            className={styles.socialLink}
             external
             underlineAnimation
             style={{ color }}

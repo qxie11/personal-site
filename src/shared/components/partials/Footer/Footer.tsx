@@ -13,7 +13,7 @@ const Footer: React.FC = () => (
         Сотрудничество
       </Title>
       <Anchor
-        classes={styles.vkLink}
+        className={styles.vkLink}
         target="_blank"
         href="https://vk.com/evgeniy_vronskiy"
       >

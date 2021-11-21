@@ -25,7 +25,7 @@ const InfoBox: React.FC<Props> = ({ title, list }) => {
         <ul>
           {list.map((item) => (
             <li key={item}>
-              <Text classes={styles.listItem}>{item}</Text>
+              <Text className={styles.listItem}>{item}</Text>
             </li>
           ))}
         </ul>

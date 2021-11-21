@@ -8,16 +8,16 @@ import modeSelectors from '@store/selectors/modeSelectors';
 import styles from './styles.module.scss';
 
 interface Props {
-  classes?: string[];
+  className?: string[];
 }
 
-const LoadingSpinner: React.FC<Props> = ({ classes = [], ...rest }) => {
+const LoadingSpinner: React.FC<Props> = ({ className = [], ...rest }) => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
     <div
       {...rest}
-      className={cx(styles.loadingSpinner, ...classes, {
+      className={cx(styles.loadingSpinner, ...className, {
         [styles.light]: isDarkMode,
       })}
     ></div>

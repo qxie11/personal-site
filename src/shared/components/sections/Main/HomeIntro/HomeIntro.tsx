@@ -25,13 +25,13 @@ const HomeIntro: React.FC = () => {
   }, []);
 
   return (
-    <Section classes={styles.section} darkModeClass={styles.darkBg}>
+    <Section className={styles.section} darkModeClass={styles.darkBg}>
       <Container ref={container}>
-        <Title classes={styles.title}>
+        <Title className={styles.title}>
           <span className={styles.titleSpan}>привет, меня зовут Евгений</span>
           <br />я фрилансер, веб-разработчик
         </Title>
-        <Text classes={styles.subtitle}>
+        <Text className={styles.subtitle}>
           разрабатываю веб-сайты более четырех лет, за плечами большой опыт в
           разработке, а также в обучении верстке сайтов.
         </Text>

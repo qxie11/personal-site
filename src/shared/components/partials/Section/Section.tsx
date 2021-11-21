@@ -9,14 +9,14 @@ import modeSelectors from '@store/selectors/modeSelectors';
 import styles from './styles.module.scss';
 
 interface Props extends HTMLAttributes<HTMLElement> {
-  classes?: string | string[];
+  className?: string;
   darkModeClass?: string;
   tagName?: keyof JSX.IntrinsicElements;
 }
 
 const Section: React.FC<Props> = ({
   children,
-  classes,
+  className,
   darkModeClass,
   tagName,
   ...rest
@@ -32,7 +32,7 @@ const Section: React.FC<Props> = ({
           [styles.darkMode]: isDarkMode,
           [darkModeClass]: isDarkMode,
         },
-        classes
+        className
       )}
       {...rest}
     >

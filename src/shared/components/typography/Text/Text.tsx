@@ -9,17 +9,17 @@ import modeSelectors from '@store/selectors/modeSelectors';
 import styles from './styles.module.scss';
 
 interface Props extends HTMLAttributes<HTMLParagraphElement> {
-  classes?: string | string[];
+  className?: string;
   ref?: ForwardedRef<HTMLParagraphElement>;
 }
 
 const Text: React.FC<Props> = forwardRef(
-  ({ children, classes, ...rest }, ref) => {
+  ({ children, className, ...rest }, ref) => {
     const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
     return (
       <p
-        className={cx(styles.text, classes, {
+        className={cx(styles.text, className, {
           [styles.light]: isDarkMode,
         })}
         ref={ref}
