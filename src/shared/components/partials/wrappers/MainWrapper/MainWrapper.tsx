@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import dynamic from 'next/dynamic';
 
 // Selectors
 import modeSelectors from '@store/selectors/modeSelectors';
@@ -8,7 +9,10 @@ import modeSelectors from '@store/selectors/modeSelectors';
 import { setMode } from '@store/reducers/mode';
 
 // Components
-import { Header, Footer } from '@components/partials';
+import { Footer } from '@components/partials';
+const Header = dynamic(() => import('@components/partials/Header/Header'), {
+  ssr: false,
+});
 
 // Styles
 import styles from './styles.module.scss';

@@ -6,12 +6,17 @@ import cx from 'classnames';
 // Components
 import { Logo, Nav } from '@components/partials';
 
+// Constants
+import { BREAKPOINT } from '@shared/constants';
+
 // Styles
 import styles from './styles.module.scss';
+import useScreen from '@shared/hooks/useScreen';
 
 const Header: React.FC = () => {
   const header = useRef<HTMLHeadElement | null>(null);
-  const [isNavActive, setNavActive] = useState<boolean>(false);
+  const [isNavActive, setNavActive] = useState(false);
+  const { width } = useScreen();
 
   useEffect(() => {
     gsap.from(header.current, {
@@ -29,6 +34,12 @@ const Header: React.FC = () => {
       enableBodyScroll(document);
     }
   }, [isNavActive]);
+
+  useEffect(() => {
+    if (width > BREAKPOINT.SM && isNavActive) {
+      setNavActive(false);
+    }
+  }, [width]);
 
   return (
     <>
