@@ -2,7 +2,11 @@ import Head from 'next/head';
 
 // Components
 import { MainWrapper } from '@partials/wrappers';
-import { ConsultIntro } from '@shared/components/sections';
+import {
+  ConsultIntro,
+  ConsultThemes,
+  WhyMe,
+} from '@shared/components/sections';
 
 export default function Consult() {
   return (
@@ -12,6 +16,8 @@ export default function Consult() {
       </Head>
       <MainWrapper>
         <ConsultIntro />
+        <ConsultThemes />
+        <WhyMe />
       </MainWrapper>
     </>
   );

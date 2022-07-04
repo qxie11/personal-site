@@ -1,8 +1,6 @@
-import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import Images from '@assets/images';
-import gsap from 'gsap';
 import cx from 'classnames';
 
 // Components
@@ -16,32 +14,24 @@ import { SOCIAL_LINK_ITEMS } from '@shared/constants';
 // Selectors
 import modeSelectors from '@store/selectors/modeSelectors';
 
+// Hooks
+import useTextAnime from '@shared/hooks/useTextAnime';
+
 // Styles
 import styles from './styles.module.scss';
 
 const ConsultIntro: React.FC = () => {
-  const infoArray = useRef<HTMLElement[]>([]);
+  const animeArray = useTextAnime();
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
-
-  useEffect(() => {
-    gsap.from(infoArray.current, {
-      delay: 0.5,
-      y: -50,
-      opacity: 0,
-      duration: 1.2,
-    });
-  }, []);
 
   return (
     <Section className={styles.section}>
       <Container>
-        <div className={cx(styles.wrapper, "d-f jc-sb gap-15")}>
-          <div className={cx(styles.infoWrapper, "f-b-50")}>
-            <Title ref={(title) => infoArray.current.push(title)}>
-              менторство
-            </Title>
+        <div className={cx(styles.wrapper, 'd-f jc-sb gap-15')}>
+          <div className={cx(styles.infoWrapper, 'f-b-50')}>
+            <Title>менторство</Title>
             <Text
-              ref={(text) => infoArray.current.push(text)}
+              ref={(text) => animeArray.current.push(text)}
               className={styles.info}
             >
               консультации по верстке и разработке сайтов с преподавателем и

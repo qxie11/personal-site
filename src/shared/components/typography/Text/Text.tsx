@@ -10,17 +10,19 @@ import styles from './styles.module.scss';
 
 interface Props extends HTMLAttributes<HTMLParagraphElement> {
   className?: string;
+  fixedColor?: 'dark' | 'light';
   ref?: ForwardedRef<HTMLParagraphElement>;
 }
 
 const Text: React.FC<Props> = forwardRef(
-  ({ children, className, ...rest }, ref) => {
+  ({ children, className, fixedColor, ...rest }, ref) => {
     const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
     return (
       <p
         className={cx(styles.text, className, {
-          [styles.light]: isDarkMode,
+          [styles.light]:
+            (isDarkMode || fixedColor === 'light') && fixedColor !== 'dark',
         })}
         ref={ref}
         {...rest}

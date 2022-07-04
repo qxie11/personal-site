@@ -14,6 +14,7 @@ interface Props extends TitleProps, HTMLAttributes<HTMLHeadingElement> {
   light?: boolean;
   small?: boolean;
   middle?: boolean;
+  fixedColor?: 'dark' | 'light';
   onClick?: (
     e?: React.MouseEvent<HTMLHeadingElement, MouseEvent> | undefined
   ) => void;
@@ -21,7 +22,7 @@ interface Props extends TitleProps, HTMLAttributes<HTMLHeadingElement> {
 }
 
 const Title: React.FC<Props> = forwardRef(
-  ({ children, className, light, small, middle, ...rest }, ref) => {
+  ({ children, className, light, small, middle, fixedColor, ...rest }, ref) => {
     const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
     return (
@@ -29,7 +30,8 @@ const Title: React.FC<Props> = forwardRef(
         className={cx(
           {
             [styles.title]: !light && !small,
-            [styles.titleLight]: isDarkMode,
+            [styles.titleLight]:
+              (isDarkMode || fixedColor === 'light') && fixedColor !== 'dark',
             [styles.titleSmall]: small,
             [styles.titleMiddle]: middle,
           },
