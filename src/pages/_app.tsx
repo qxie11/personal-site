@@ -9,7 +9,7 @@ import '../styles/global.scss';
 export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <NextNprogress color="#1cfcdb" height={3} />
+      <NextNprogress color="#b80929" height={3} />
       <Head>
         <meta
           name="viewport"

@@ -7,7 +7,7 @@ import { Text, Title } from '@components/typography';
 import { Section, SocialList } from '@components/partials';
 
 // Constants
-import { SOCAIL_LINK_ITEMS } from '@shared/constants';
+import { SOCIAL_LINK_ITEMS } from '@shared/constants';
 
 // Styles
 import styles from './styles.module.scss';
@@ -35,7 +35,7 @@ const AboutIntro: React.FC = () => {
           я React / Front-end разработчик, верстаю сайты различной сложности. В
           свободное время занимаюсь репетиторством
         </Text>
-        <SocialList linkList={SOCAIL_LINK_ITEMS} />
+        <SocialList linkList={SOCIAL_LINK_ITEMS} />
       </Container>
     </Section>
   );

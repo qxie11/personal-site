@@ -13,11 +13,11 @@ const Footer: React.FC = () => (
         Сотрудничество
       </Title>
       <Anchor
-        className={styles.vkLink}
+        className={styles.tmeLink}
         target="_blank"
-        href="https://vk.com/evgeniy_vronskiy"
-      >
-        vk.com/evgeniy_vronskiy
+        href="https://t.me/dsxxxx"
+      >      
+        t.me/dsxxxx
       </Anchor>
       <Nav withoutToggleTheme notConvertIntoToggleMenu />
     </Container>

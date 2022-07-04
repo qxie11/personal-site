@@ -1,0 +1,22 @@
+@import 'src/styles/vars';
+@import 'src/styles/mixins';
+
+.section {
+  padding: clamp(150px, 20vw, 400px) 0;
+}
+
+.info {
+  max-width: 560px;
+}
+
+.infoWrapper {
+  @include breakpoint($sm) {
+    margin-bottom: 20px;
+  }
+}
+
+.wrapper {
+  @include breakpoint($sm) {
+    flex-direction: column;
+  }
+}

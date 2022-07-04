@@ -21,3 +21,27 @@ textarea {
     outline: 2px solid $shiraz;
   }
 }
+
+.d-f {
+  display: flex;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+@for $i from 1 through 10 {
+  .f-b-#{$i * 10} {
+    flex-basis: $i * 10%;
+  }
+}
+
+@for $i from 5 through 30 {
+  .gap-#{$i} {
+    gap: #{$i}px;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}

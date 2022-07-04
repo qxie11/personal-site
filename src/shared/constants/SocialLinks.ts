@@ -1,6 +1,6 @@
 import { SocialLink } from '@shared/types';
 
-const SOCAIL_LINK_ITEMS: SocialLink[] = [
+const SOCIAL_LINK_ITEMS: SocialLink[] = [
   {
     name: 'telegram',
     link: 'https://t.me/dsxxxx',
@@ -18,4 +18,4 @@ const SOCAIL_LINK_ITEMS: SocialLink[] = [
   },
 ];
 
-export default SOCAIL_LINK_ITEMS;
+export default SOCIAL_LINK_ITEMS;
