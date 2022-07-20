@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { useWindowSize } from 'rooks';
 import gsap from 'gsap';
 import cx from 'classnames';
 
@@ -11,12 +12,11 @@ import { BREAKPOINT } from '@shared/constants';
 
 // Styles
 import styles from './styles.module.scss';
-import useScreen from '@shared/hooks/useScreen';
 
 const Header: React.FC = () => {
   const header = useRef<HTMLHeadElement | null>(null);
   const [isNavActive, setNavActive] = useState(false);
-  const { width } = useScreen();
+  const { innerWidth } = useWindowSize();
 
   useEffect(() => {
     gsap.from(header.current, {
@@ -36,10 +36,10 @@ const Header: React.FC = () => {
   }, [isNavActive]);
 
   useEffect(() => {
-    if (width > BREAKPOINT.SM && isNavActive) {
+    if (innerWidth > BREAKPOINT.SM && isNavActive) {
       setNavActive(false);
     }
-  }, [width]);
+  }, [innerWidth]);
 
   return (
     <>

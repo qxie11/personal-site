@@ -1,13 +1,12 @@
 import Image from 'next/image';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
-import ReadMoreReact from 'read-more-react';
+import { useWindowSize } from 'rooks';
 
 // Components
-import { Section } from '@shared/components/partials';
-import { Container } from '@shared/components/partials/layout';
-import { Title, Text } from '@shared/components/typography';
-
+import { Section, ReadMore } from '@components/partials';
+import { Container } from '@components/partials/layout';
+import { Title, Text } from '@components/typography';
 
 // Constants
 import { FEEDBACK_LIST } from './constants';
@@ -20,6 +19,8 @@ import styles from './styles.module.scss';
 
 const ConsultFeedback = () => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
+  const { innerWidth } = useWindowSize();
+  const readMoreMinLength = innerWidth / 6;
 
   return (
     <Section>
@@ -46,21 +47,16 @@ const ConsultFeedback = () => {
                     alt={name}
                   />
                 </div>
-
                 <div className={styles.content}>
                   <Title className={styles.name} level={3} middle>
                     {name}
                   </Title>
                   <Text className={styles.position}>{position}</Text>
-                  <Text className={styles.feedback}>
-                    <ReadMoreReact
-                      text={feedback}
-                      min={10}
-                      ideal={200}
-                      max={900}
-                      readMoreText="Читать дальше..."
-                    />
-                  </Text>
+                  <ReadMore
+                    className={styles.feedback}
+                    text={feedback}
+                    min={readMoreMinLength}
+                  />
                 </div>
               </div>
             </li>
