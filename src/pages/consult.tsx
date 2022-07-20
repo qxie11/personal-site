@@ -6,6 +6,7 @@ import {
   ConsultIntro,
   ConsultThemes,
   WhyMe,
+  ConsultFeedback,
 } from '@shared/components/sections';
 
 export default function Consult() {
@@ -18,6 +19,7 @@ export default function Consult() {
         <ConsultIntro />
         <ConsultThemes />
         <WhyMe />
+        <ConsultFeedback />
       </MainWrapper>
     </>
   );

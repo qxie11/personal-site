@@ -1,0 +1,53 @@
+@import 'src/styles/vars';
+@import 'src/styles/mixins';
+
+.item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.feedbackWrapper {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  background: $athens-gray;
+
+  @include breakpoint($sm) {
+    flex-direction: column;
+  }
+
+  &.darkBg {
+    background: $mine-shaft;
+  }
+}
+
+.name {
+  margin-bottom: 0;
+}
+
+.position {
+  font-size: 0.8rem;
+}
+
+.feedback {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.photo {
+  width: 20%;
+
+  @include breakpoint($sm) {
+    width: auto;
+  }
+}
+
+.content {
+  width: 75%;
+  padding: 1.5rem;
+
+  @include breakpoint($sm) {
+    width: 100%;
+  }
+}

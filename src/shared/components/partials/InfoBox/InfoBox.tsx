@@ -12,23 +12,27 @@ import styles from './styles.module.scss';
 
 interface Props {
   title: string;
-  list: string[];
+  list?: string[];
+  text?: string;
 }
 
-const InfoBox: React.FC<Props> = ({ title, list }) => {
+const InfoBox: React.FC<Props> = ({ title, list, text }) => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
     <div className={cx(styles.box, { [styles.darkMode]: isDarkMode })}>
       <div className={styles.wrapper}>
         <Title level={3}>{title}</Title>
-        <ul>
-          {list.map((item) => (
-            <li key={item}>
-              <Text className={styles.listItem}>{item}</Text>
-            </li>
-          ))}
-        </ul>
+        {list && (
+          <ul>
+            {list.map((item) => (
+              <li key={item}>
+                <Text className={styles.listItem}>{item}</Text>
+              </li>
+            ))}
+          </ul>
+        )}
+        {text && <Text>{text}</Text>}
       </div>
     </div>
   );
