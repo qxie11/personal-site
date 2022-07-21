@@ -1,8 +1,13 @@
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
+import Image, { ImageProps } from 'next/image';
 
 // Components
 import { Title, Text } from '@components/typography';
+import { ReadMore } from '@components/partials';
+
+// Types
+import { IReadMore } from '@shared/types';
 
 // Selectors
 import modeSelectors from '@store/selectors/modeSelectors';
@@ -12,27 +17,65 @@ import styles from './styles.module.scss';
 
 interface Props {
   title: string;
+  titleClassName?: string;
+  subtitle?: string;
   list?: string[];
   text?: string;
+  readMoreSettings?: IReadMore;
+  imageSettings?: ImageProps;
+  wrapperClassName?: string;
+  boxClassName?: string;
 }
 
-const InfoBox: React.FC<Props> = ({ title, list, text }) => {
+const InfoBox: React.FC<Props> = ({
+  title,
+  titleClassName,
+  subtitle,
+  list,
+  text,
+  readMoreSettings,
+  imageSettings,
+  wrapperClassName,
+  boxClassName,
+}) => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
-    <div className={cx(styles.box, { [styles.darkMode]: isDarkMode })}>
-      <div className={styles.wrapper}>
-        <Title level={3}>{title}</Title>
-        {list && (
-          <ul>
-            {list.map((item) => (
-              <li key={item}>
-                <Text className={styles.listItem}>{item}</Text>
-              </li>
-            ))}
-          </ul>
+    <div
+      className={cx(styles.box, boxClassName, {
+        [styles.darkMode]: isDarkMode,
+        [styles['p-0']]: imageSettings,
+      })}
+    >
+      <div className={cx(styles.wrapper, wrapperClassName)}>
+        {imageSettings && (
+          <div className={styles.photo}>
+            <Image {...imageSettings} />
+          </div>
         )}
-        {text && <Text>{text}</Text>}
+        <div className={cx({ [styles.content]: imageSettings })}>
+          <Title className={titleClassName} level={3}>
+            {title}
+          </Title>
+          {subtitle && <Text className={styles.subtitle}>{subtitle}</Text>}
+          {list && (
+            <ul>
+              {list.map((item) => (
+                <li key={item}>
+                  <Text className={styles.listItem}>{item}</Text>
+                </li>
+              ))}
+            </ul>
+          )}
+          {text && !readMoreSettings && <Text>{text}</Text>}
+          {readMoreSettings && (
+            <ReadMore
+              textClassName={readMoreSettings.textClassName}
+              text={readMoreSettings.text}
+              min={readMoreSettings.min}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

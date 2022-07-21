@@ -3,16 +3,13 @@ import { useState, useMemo } from 'react';
 // Components
 import { Text } from '@components/typography';
 
+// Types
+import { IReadMore } from '@shared/types';
+
 // Utils
 import { parseReadMoreText } from '@shared/utils';
 
-interface Props {
-  text: string;
-  min: number;
-  className?: string;
-}
-
-const ReadMore = ({ text, min, className }: Props) => {
+const ReadMore = ({ text, min, textClassName }: IReadMore) => {
   const [isOpen, setIsOpen] = useState(false);
   const parsedText = useMemo(
     () => parseReadMoreText(text, min, isOpen),
@@ -22,7 +19,7 @@ const ReadMore = ({ text, min, className }: Props) => {
   const toggleIsOpen = () => setIsOpen(!isOpen);
 
   return (
-    <Text className={className} onClick={isOpen ? toggleIsOpen : undefined}>
+    <Text className={textClassName} onClick={isOpen ? toggleIsOpen : undefined}>
       {parsedText}
       {!isOpen && (
         <>

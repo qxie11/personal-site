@@ -1,4 +1,9 @@
 @import 'src/styles/vars';
+@import 'src/styles/mixins';
+
+.subtitle {
+  font-size: 0.8rem;
+}
 
 .box {
   padding: 2rem 0;
@@ -9,11 +14,32 @@
   &.darkMode {
     background: $mine-shaft;
   }
+
+  &.p-0 {
+    padding: 0;
+  }
 }
 
 .wrapper {
   width: 85%;
   margin: 0 auto;
+}
+
+.photo {
+  width: 20%;
+
+  @include breakpoint($sm) {
+    width: auto;
+  }
+}
+
+.content {
+  width: 75%;
+  padding: 1.5rem;
+
+  @include breakpoint($sm) {
+    width: 100%;
+  }
 }
 
 $leftListGap: 1.5rem;
