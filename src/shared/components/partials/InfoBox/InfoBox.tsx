@@ -72,7 +72,9 @@ const InfoBox: React.FC<Props> = ({
             <ReadMore
               textClassName={readMoreSettings.textClassName}
               text={readMoreSettings.text}
+              ideal={readMoreSettings.ideal}
               min={readMoreSettings.min}
+              max={readMoreSettings.max}
             />
           )}
         </div>

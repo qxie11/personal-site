@@ -9,10 +9,10 @@ import { IReadMore } from '@shared/types';
 // Utils
 import { parseReadMoreText } from '@shared/utils';
 
-const ReadMore = ({ text, min, textClassName }: IReadMore) => {
+const ReadMore = ({ text, min, max, ideal, textClassName }: IReadMore) => {
   const [isOpen, setIsOpen] = useState(false);
   const parsedText = useMemo(
-    () => parseReadMoreText(text, min, isOpen),
+    () => parseReadMoreText(text, min, max, ideal, isOpen),
     [text, min, isOpen]
   );
 
