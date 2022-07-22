@@ -3,8 +3,7 @@ import cx from 'classnames';
 import Image, { ImageProps } from 'next/image';
 
 // Components
-import { Title, Text } from '@components/typography';
-import { ReadMore } from '@components/partials';
+import { Title, Text, ReadMore } from '@components/typography';
 
 // Types
 import { IReadMore } from '@shared/types';
@@ -25,6 +24,8 @@ interface Props {
   imageSettings?: ImageProps;
   wrapperClassName?: string;
   boxClassName?: string;
+  boxAttributes?: React.HTMLAttributes<HTMLDivElement>;
+  bottomChildren?: React.ReactNode;
 }
 
 const InfoBox: React.FC<Props> = ({
@@ -37,6 +38,8 @@ const InfoBox: React.FC<Props> = ({
   imageSettings,
   wrapperClassName,
   boxClassName,
+  boxAttributes,
+  bottomChildren,
 }) => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
@@ -46,6 +49,7 @@ const InfoBox: React.FC<Props> = ({
         [styles.darkMode]: isDarkMode,
         [styles['p-0']]: imageSettings,
       })}
+      {...boxAttributes}
     >
       <div className={cx(styles.wrapper, wrapperClassName)}>
         {imageSettings && (
@@ -77,6 +81,7 @@ const InfoBox: React.FC<Props> = ({
               max={readMoreSettings.max}
             />
           )}
+          {bottomChildren}
         </div>
       </div>
     </div>

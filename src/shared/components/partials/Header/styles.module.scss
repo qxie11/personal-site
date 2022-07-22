@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
 
-  @include breakpoint(768px) {
+  @include breakpoint($md) {
     position: fixed;
     width: 0;
     height: 0;
@@ -43,7 +43,7 @@
   background: $black;
   cursor: pointer;
 
-  @include breakpoint(768px) {
+  @include breakpoint($md) {
     display: block;
   }
 

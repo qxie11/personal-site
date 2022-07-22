@@ -8,11 +8,11 @@
 .box {
   padding: 2rem 0;
   border-radius: 20px;
-  background: $athens-gray;
+  background-color: $athens-gray;
   box-shadow: 16px 16px 32px rgba($black, 0.15);
 
   &.darkMode {
-    background: $mine-shaft;
+    background-color: $mine-shaft;
   }
 
   &.p-0 {

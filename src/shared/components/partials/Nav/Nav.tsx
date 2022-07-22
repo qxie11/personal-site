@@ -82,7 +82,7 @@ const Nav: React.FC<Props> = ({
             </svg>
           ) : (
             <svg
-              className={`${styles.svg} ${styles.sun}`}
+              className={cx(styles.svg, styles.sun)}
               fill="white"
               viewBox="0 0 302.4 302.4"
             >

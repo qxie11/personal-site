@@ -1,0 +1,18 @@
+@import 'src/styles/mixins';
+@import 'src/styles/vars';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 4rem;
+}
+
+$top-gap: 182px;
+
+.format {
+  height: 100%;
+  padding-top: $top-gap;
+  background-position: top center;
+  background-size: 100% $top-gap - 15px;
+  background-repeat: no-repeat;
+}

@@ -7,6 +7,7 @@ import {
   ConsultThemes,
   WhyMe,
   ConsultFeedback,
+  ConsultPrices,
 } from '@shared/components/sections';
 
 export default function Consult() {
@@ -20,6 +21,7 @@ export default function Consult() {
         <ConsultThemes />
         <WhyMe />
         <ConsultFeedback />
+        <ConsultPrices />
       </MainWrapper>
     </>
   );

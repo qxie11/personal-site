@@ -17,8 +17,8 @@ const WhyMe = () => (
       </Title>
     </Container>
     <ul className={styles.wrapper}>
-      {WHY_ME_LIST.map(({ icon, title, text }) => (
-        <li className={styles.item}>
+      {WHY_ME_LIST.map(({ icon, title, text }, i) => (
+        <li key={`${title}-${i}`} className={styles.item}>
           <img className={styles.icon} src={icon} alt={title} />
           <Title middle level={3} fixedColor="light">
             {title}

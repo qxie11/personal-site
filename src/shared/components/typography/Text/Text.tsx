@@ -12,14 +12,15 @@ interface Props extends HTMLAttributes<HTMLParagraphElement> {
   className?: string;
   fixedColor?: 'dark' | 'light';
   ref?: ForwardedRef<HTMLParagraphElement>;
+  tagName?: keyof JSX.IntrinsicElements;
 }
 
 const Text: React.FC<Props> = forwardRef(
-  ({ children, className, fixedColor, ...rest }, ref) => {
+  ({ children, className, fixedColor, tagName: Tag = 'p', ...rest }, ref) => {
     const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
     return (
-      <p
+      <Tag
         className={cx(styles.text, className, {
           [styles.light]:
             (isDarkMode || fixedColor === 'light') && fixedColor !== 'dark',
@@ -28,7 +29,7 @@ const Text: React.FC<Props> = forwardRef(
         {...rest}
       >
         {children}
-      </p>
+      </Tag>
     );
   }
 );

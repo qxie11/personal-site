@@ -6,3 +6,4 @@ export { default as ConsultIntro } from '@sections/Consult/ConsultIntro/ConsultI
 export { default as ConsultThemes } from '@sections/Consult/ConsultThemes/ConsultThemes';
 export { default as WhyMe } from '@sections/Consult/WhyMe/WhyMe';
 export { default as ConsultFeedback } from '@sections/Consult/ConsultFeedback/ConsultFeedback';
+export { default as ConsultPrices } from '@sections/Consult/ConsultPrices/ConsultPrices';

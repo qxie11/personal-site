@@ -13,7 +13,7 @@ const ReadMore = ({ text, min, max, ideal, textClassName }: IReadMore) => {
   const [isOpen, setIsOpen] = useState(false);
   const parsedText = useMemo(
     () => parseReadMoreText(text, min, max, ideal, isOpen),
-    [text, min, isOpen]
+    [text, min, max, ideal, isOpen]
   );
 
   const toggleIsOpen = () => setIsOpen(!isOpen);
