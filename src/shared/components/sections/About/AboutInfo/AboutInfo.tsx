@@ -1,5 +1,5 @@
 // Components
-import { InfoBox, Section } from '@components/partials';
+import { InfoBox, Section, List } from '@components/partials';
 import { Title } from '@components/typography';
 import { Container } from '@partials/layout';
 
@@ -16,8 +16,13 @@ const AboutInfo: React.FC = () => (
         Информация
       </Title>
       <div className={styles.wrapper}>
-        {INFORMATION_DATA.map((data) => (
-          <InfoBox key={data.title} {...data} />
+        {INFORMATION_DATA.map(({ title, list }) => (
+          <InfoBox key={title}>
+            <Title middle level={3}>
+              {title}
+            </Title>
+            <List listArray={list} />
+          </InfoBox>
         ))}
       </div>
     </Container>

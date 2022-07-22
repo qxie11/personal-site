@@ -1,6 +1,6 @@
 // Components
 import { Container } from '@partials/layout';
-import { Title } from '@components/typography';
+import { Title, Text } from '@components/typography';
 import { Section, InfoBox } from '@components/partials';
 
 // Constants
@@ -17,7 +17,10 @@ const ConsultThemes = () => (
       </Title>
       <ul className={styles.wrapper}>
         {THEMES_LIST.map(({ title, text }) => (
-          <InfoBox key={title} title={title} text={text} />
+          <InfoBox key={title}>
+            <Title middle level={3}>{title}</Title>
+            <Text>{text}</Text>
+          </InfoBox>
         ))}
       </ul>
     </Container>

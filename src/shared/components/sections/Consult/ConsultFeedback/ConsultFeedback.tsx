@@ -1,9 +1,10 @@
 import { useWindowSize } from 'rooks';
+import Image from 'next/image';
 
 // Components
 import { Section, InfoBox } from '@components/partials';
 import { Container } from '@components/partials/layout';
-import { Title } from '@components/typography';
+import { Title, Text, ReadMore } from '@components/typography';
 
 // Constants
 import { FEEDBACK_LIST } from './constants';
@@ -25,27 +26,34 @@ const ConsultFeedback = () => {
           {FEEDBACK_LIST.map(({ feedback, name, position, photo }, i) => (
             <li className={styles.item} key={`${name}-${i}`}>
               <InfoBox
-                title={name}
-                titleClassName={styles.name}
-                subtitle={position}
-                wrapperClassName={styles.feedbackWrapper}
-                readMoreSettings={{
-                  textClassName: styles.feedback,
-                  text: feedback,
-                  ideal: readMoreMinLength,
-                  min: 120,
-                  max: 250,
-                }}
-                imageSettings={{
-                  width: 471,
-                  height: 579,
-                  layout: 'intrinsic',
-                  placeholder: 'blur',
-                  quality: 90,
-                  src: photo,
-                  alt: name,
-                }}
-              />
+                boxAttributes={{ className: styles.box }}
+                wrapperAttributes={{ className: styles.feedbackWrapper }}
+              >
+                <div className={styles.photo}>
+                  <Image
+                    width={471}
+                    height={579}
+                    layout="intrinsic"
+                    placeholder="blur"
+                    quality={90}
+                    src={photo}
+                    alt={name}
+                  />
+                </div>
+                <div className={styles.content}>
+                  <Title className={styles.name} level={3}>
+                    {name}
+                  </Title>
+                  <Text className={styles.subtitle}>{position}</Text>
+                  <ReadMore
+                    textClassName={styles.feedback}
+                    text={feedback}
+                    ideal={readMoreMinLength}
+                    min={100}
+                    max={250}
+                  />
+                </div>
+              </InfoBox>
             </li>
           ))}
         </ul>

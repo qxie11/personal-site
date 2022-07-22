@@ -19,18 +19,17 @@ const ConsultPrices = () => (
         {PACKAGES_NAME.map((format) => (
           <li key={format.title}>
             <InfoBox
-              title={format.title}
-              text={format.desc}
-              boxClassName={styles.format}
               boxAttributes={{
+                className: styles.format,
                 style: {
                   backgroundImage: `url(${format.image})`,
                 },
               }}
-              bottomChildren={
-                <Text tagName="strong">{format.price} руб.</Text>
-              }
-            />
+            >
+              <Title level={3}>{format.title}</Title>
+              <Text>{format.desc}</Text>
+              <Text tagName="strong">{format.price} руб.</Text>
+            </InfoBox>
           </li>
         ))}
       </ul>

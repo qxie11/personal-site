@@ -1,10 +1,6 @@
 @import 'src/styles/vars';
 @import 'src/styles/mixins';
 
-.subtitle {
-  font-size: 0.8rem;
-}
-
 .box {
   padding: 2rem 0;
   border-radius: 20px;
@@ -14,48 +10,9 @@
   &.darkMode {
     background-color: $mine-shaft;
   }
-
-  &.p-0 {
-    padding: 0;
-  }
 }
 
 .wrapper {
   width: 85%;
   margin: 0 auto;
-}
-
-.photo {
-  width: 20%;
-
-  @include breakpoint($sm) {
-    width: auto;
-  }
-}
-
-.content {
-  width: 75%;
-  padding: 1.5rem;
-
-  @include breakpoint($sm) {
-    width: 100%;
-  }
-}
-
-$leftListGap: 1.5rem;
-
-.listItem {
-  position: relative;
-  margin-left: $leftListGap;
-
-  &:after {
-    content: '';
-    position: absolute;
-    left: -$leftListGap;
-    top: 50%;
-    width: 5px;
-    height: 5px;
-    background: $shiraz;
-    border-radius: 50%;
-  }
 }

@@ -1,0 +1,19 @@
+@import 'src/styles/vars';
+
+$leftListGap: 1.5rem;
+
+.listItem {
+  position: relative;
+  margin-left: $leftListGap;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -$leftListGap;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    background: $shiraz;
+    border-radius: 50%;
+  }
+}
