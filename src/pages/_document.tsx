@@ -1,6 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
+  componentDidMount(): void {
+    window?.dataLayer = window?.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-185699919-1');
+  }
+
   render() {
     return (
       <Html>
@@ -11,6 +21,11 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-185699919-1"
+          ></script>
+          <script>{}</script>
         </body>
       </Html>
     );
