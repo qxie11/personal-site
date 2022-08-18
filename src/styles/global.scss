@@ -1,5 +1,6 @@
 @import 'vars';
 @import 'mixins';
+@import 'functions';
 
 .lightColor {
   color: $white;
@@ -39,6 +40,12 @@ textarea {
 @for $i from 5 through 30 {
   .gap-#{$i} {
     gap: #{$i}px;
+  }
+}
+
+@for $i from 1 through 50 {
+  .f-z-#{floor($i * 0.2)}-#{getFractionalPart($i * 0.2)}-rem {
+    font-size: #{$i * 0.2}rem;
   }
 }
 

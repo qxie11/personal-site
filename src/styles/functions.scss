@@ -1,0 +1,11 @@
+@function ternary($condition, $if-value, $else-value) {
+  @if ($condition == true) {
+    @return $if-value;
+  } @else {
+    @return $else-value;
+  }
+}
+
+@function getFractionalPart($number) {
+  @return ($number - floor($number)) * 10;
+}

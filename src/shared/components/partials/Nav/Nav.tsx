@@ -1,11 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import gsap from 'gsap';
 import cx from 'classnames';
-
-// Actions
-import { switchMode } from '@store/reducers/mode';
 
 // Components
 import { Anchor } from '@shared/components/typography';
@@ -13,6 +10,9 @@ import { Anchor } from '@shared/components/typography';
 // Constants
 import { NAV_ITEMS, NAV_ITEMS_WITH_HOME } from './constants';
 import { PAGES } from '@shared/constants';
+
+// Hooks
+import useActions from '@hooks/useActions';
 
 // Selectors
 import modeSelectors from '@store/selectors/modeSelectors';
@@ -29,8 +29,8 @@ const Nav: React.FC<Props> = ({
   withoutToggleTheme,
   notConvertIntoToggleMenu,
 }) => {
-  const dispatch = useDispatch();
   const { pathname } = useRouter();
+  const { switchMode } = useActions();
 
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
@@ -63,7 +63,7 @@ const Nav: React.FC<Props> = ({
       {!withoutToggleTheme && (
         <button
           className={styles.toggle_mode_btn}
-          onClick={() => dispatch(switchMode())}
+          onClick={() => switchMode()}
         >
           {!isDarkMode ? (
             <svg
