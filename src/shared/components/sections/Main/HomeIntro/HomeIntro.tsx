@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { FormattedMessage } from 'react-intl';
 
 // Components
 import { Section, SocialList } from '@components/partials';
@@ -28,8 +29,10 @@ const HomeIntro: React.FC = () => {
     <Section className={styles.section} darkModeClass={styles.darkBg}>
       <Container ref={container}>
         <Title className={styles.title}>
-          <span className={styles.titleSpan}>привет, меня зовут Евгений</span>
-          <br />я фрилансер, веб-разработчик
+          <span className={styles.titleSpan}>
+            <FormattedMessage id="MAIN_PAGE.GREETINGS" />
+          </span>
+          <br /><FormattedMessage id="MAIN_PAGE.POSITION" />
         </Title>
         <Text className={styles.subtitle}>
           разрабатываю веб-сайты более четырех лет, за плечами большой опыт в

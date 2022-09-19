@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 // Components
 import { Footer } from '@components/partials';
 
 // Hooks
-import { useActions } from '@shared/hooks';
+import { useOnAppInit } from '@shared/hooks';
 
 const Header = dynamic(() => import('@components/partials/Header/Header'), {
   ssr: false,
@@ -15,15 +14,7 @@ const Header = dynamic(() => import('@components/partials/Header/Header'), {
 import styles from './styles.module.scss';
 
 const MainWrapper = ({ children }) => {
-  const { setMode } = useActions();
-
-  useEffect(() => {
-    const mode = localStorage.getItem('theme') === 'true' ? true : false;
-
-    if (mode) {
-      setMode(mode);
-    }
-  }, []);
+  useOnAppInit();
 
   return (
     <div className={styles.wrapper}>

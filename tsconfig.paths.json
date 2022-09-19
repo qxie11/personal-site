@@ -16,7 +16,8 @@
       "@helpers/*": ["./src/shared/helpers/*"],
       "@types/*": ["./src/shared/types/*"],
       "@pages/*": ["./src/pages/*"],
-      "@store/*": ["./src/store/*"]
+      "@store/*": ["./src/store/*"],
+      "@intl/*": ["./src/intl/*"]
     }
   }
 }

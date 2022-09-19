@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import cx from 'classnames';
 
 // Components
-import { Logo, Nav } from '@components/partials';
+import { LanguageSwitcher, Logo, Nav } from '@components/partials';
 
 // Constants
 import { BREAKPOINT } from '@shared/constants';
@@ -51,6 +51,7 @@ const Header: React.FC = () => {
       >
         <Logo />
         <Nav />
+        <LanguageSwitcher />
       </header>
       <button
         className={styles.menuBtn}

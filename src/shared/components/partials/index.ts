@@ -6,3 +6,4 @@ export { default as SocialList } from './SocialList/SocialList';
 export { default as Section } from './Section/Section';
 export { default as InfoBox } from './InfoBox/InfoBox';
 export { default as List } from './List/List';
+export { default as LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
