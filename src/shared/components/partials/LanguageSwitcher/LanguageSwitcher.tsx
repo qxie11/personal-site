@@ -1,24 +1,33 @@
-import { useActions } from '@shared/hooks';
-import intlSelectors from '@store/selectors/intlSelectors';
 import { Select } from 'antd';
 import { useSelector } from 'react-redux';
+import cx from 'classnames';
+
+import { useActions } from '@shared/hooks';
+import intlSelectors from '@store/selectors/intlSelectors';
 
 // Constants
 import { LANGUAGE_SWITCHER_DATA } from './constants';
 
 const { Option } = Select;
 
-const LanguageSwitcher = () => {
-    const currentLng = useSelector(intlSelectors.selectCurrentLanguage);
-    const {changeCurrentLng} = useActions();
+interface Props {
+  className?: string;
+}
+
+const LanguageSwitcher = ({ className }: Props) => {
+  const currentLng = useSelector(intlSelectors.selectCurrentLanguage);
+  const { changeCurrentLng } = useActions();
+
   const handleChange = (val) => {
-    changeCurrentLng(val)
+    changeCurrentLng(val);
   };
 
   return (
-    <Select value={currentLng} onChange={handleChange}>
+    <Select className={cx(className)} value={currentLng} onChange={handleChange}>
       {LANGUAGE_SWITCHER_DATA.map(({ value, text }) => (
-        <Option key={value} value={value}>{text}</Option>
+        <Option key={value} value={value}>
+          {text}
+        </Option>
       ))}
     </Select>
   );

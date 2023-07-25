@@ -20,6 +20,7 @@ const intlSlice = createSlice({
     },
     changeCurrentLng(state, action) {
       state.currentLng = action.payload;
+      localStorage.setItem('currentLng', action.payload);
     },
   },
 });

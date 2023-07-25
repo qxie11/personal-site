@@ -1,33 +1,40 @@
 @import 'src/styles/mixins';
 @import 'src/styles/vars';
 
-.title {
-  font-size: 3rem;
-  word-break: break-all;
-  hyphens: auto;
-}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.title {
+    font-size: 3rem;
+    word-break: break-all;
+    hyphens: auto;
+  }
 
-.titleLight {
-  color: $white;
-}
+  &.titleLight {
+    color: $white;
+  }
 
-.titleMiddle {
-  font-size: 2.2rem;
-}
+  &.titleMiddle {
+    font-size: 2.2rem;
+  }
 
-.titleSmall {
-  font-size: 1.2rem;
-}
+  &.titleSmall {
+    font-size: 1.2rem;
+  }
 
-.titleMiddle,
-.titleSmall {
-  font-weight: 400;
-}
+  &.titleMiddle,
+  &.titleSmall {
+    font-weight: 400;
+  }
 
-.title,
-.titleMiddle,
-.titleSmall {
-  margin: 0 0 30px;
-  font-family: $montserrat;
-  line-height: 1.2;
+  &.title,
+  &.titleMiddle,
+  &.titleSmall {
+    margin: 0 0 30px;
+    font-family: $montserrat;
+    line-height: 1.2;
+  }
 }

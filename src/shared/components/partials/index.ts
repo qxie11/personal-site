@@ -7,3 +7,4 @@ export { default as Section } from './Section/Section';
 export { default as InfoBox } from './InfoBox/InfoBox';
 export { default as List } from './List/List';
 export { default as LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
+export { default as ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher';

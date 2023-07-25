@@ -5,7 +5,6 @@
   position: absolute;
   right: 0;
   left: 0;
-  z-index: 9999;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -60,4 +59,8 @@
       margin-top: 9px;
     }
   }
+}
+
+.themeSwitcher {
+  margin: 0 3rem;
 }

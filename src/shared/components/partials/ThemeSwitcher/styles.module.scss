@@ -1,0 +1,46 @@
+@import 'src/styles/vars';
+@import 'src/styles/mixins';
+
+.toggle_mode_btn {
+  background: transparent;
+  border: none;
+
+  @include breakpoint($sm) {
+    max-width: 37px;
+    justify-self: center;
+  }
+}
+
+.svg {
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+
+  @include breakpoint($sm) {
+    fill: $white;
+  }
+
+  &:hover {
+    path {
+      fill: $shiraz;
+    }
+  }
+}
+
+.moon,
+.sun {
+  transition: 0.5s ease;
+}
+
+.moon {
+  &:hover {
+    transform: rotate(40deg);
+  }
+}
+
+.sun {
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+

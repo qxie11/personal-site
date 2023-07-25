@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Evgeniy Vronskiy</title>
+        <title>Evgeniy Ponomarev</title>
       </Head>
       <MainWrapper>
         <HomeIntro />
