@@ -15,9 +15,9 @@ const Footer: React.FC = () => (
       <Anchor
         className={styles.tmeLink}
         target="_blank"
-        href="https://t.me/dsxxxx"
+        href="mailto:ponamarevevgeniy11@gmail.com"
       >      
-        t.me/dsxxxx
+        ponamarevevgeniy11@gmail.com
       </Anchor>
       <Nav withoutToggleTheme notConvertIntoToggleMenu />
     </Container>
