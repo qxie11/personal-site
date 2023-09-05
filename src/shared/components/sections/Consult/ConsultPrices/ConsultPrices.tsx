@@ -28,7 +28,7 @@ const ConsultPrices = () => (
             >
               <Title level={3}>{format.title}</Title>
               <Text>{format.desc}</Text>
-              <Text tagName="strong">{format.price} руб.</Text>
+              <Text tagName="strong">от 18$, по договоренности</Text>
             </InfoBox>
           </li>
         ))}
