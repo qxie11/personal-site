@@ -1,13 +1,13 @@
 // Components
-import { InfoBox, Section, List } from '@components/partials';
-import { Title } from '@components/typography';
-import { Container } from '@partials/layout';
+import { InfoBox, Section, List } from "shared/components/partials";
+import { Title } from "shared/components/typography";
+import { Container } from "shared/components/partials/layout";
 
 // Constants
-import { INFORMATION_DATA } from './constants';
+import { INFORMATION_DATA } from "./constants";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const AboutInfo: React.FC = () => (
   <Section>

@@ -1,13 +1,13 @@
 // Components
-import { Section, InfoBox } from '@components/partials';
-import { Container } from '@components/partials/layout';
-import { Title, Text } from '@components/typography';
+import { Section, InfoBox } from "shared/components/partials";
+import { Container } from "shared/components/partials/layout";
+import { Title, Text } from "shared/components/typography";
 
 // Constants
-import { PACKAGES_NAME } from './constants';
+import { PACKAGES_NAME } from "./constants";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const ConsultPrices = () => (
   <Section>
@@ -22,7 +22,7 @@ const ConsultPrices = () => (
               boxAttributes={{
                 className: styles.format,
                 style: {
-                  backgroundImage: `url(${format.image})`,
+                  backgroundImage: `url(${format.image.src})`,
                 },
               }}
             >

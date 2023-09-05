@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import cx from 'classnames';
 
 // Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
+import modeSelectors from 'store/selectors/modeSelectors';
 
 // Styles
 import styles from './styles.module.scss';
@@ -16,7 +16,7 @@ interface Props extends HTMLAttributes<HTMLParagraphElement> {
 }
 
 const Text: React.FC<Props> = forwardRef(
-  ({ children, className, fixedColor, tagName = 'P', ...rest }, ref) => {
+  ({ children, className, fixedColor, tagName = 'p', ...rest }, ref) => {
     const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
     const Tag = tagName as any;
 

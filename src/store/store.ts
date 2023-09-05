@@ -1,7 +1,7 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import modeReducer from './reducers/mode';
-import intlReducer from './reducers/intl';
-import modeToLocalStorage from './middleware/modeToLocalStorage';
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import modeReducer from "./reducers/mode";
+import intlReducer from "./reducers/intl";
+import modeToLocalStorage from "./middleware/modeToLocalStorage";
 
 const rootReducer = combineReducers({
   mode: modeReducer,

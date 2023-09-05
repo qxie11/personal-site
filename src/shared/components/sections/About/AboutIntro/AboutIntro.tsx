@@ -1,16 +1,16 @@
 // Components
-import { Container } from '@partials/layout';
-import { Text, Title } from '@components/typography';
-import { Section, SocialList } from '@components/partials';
+import { Container } from "shared/components/partials/layout";
+import { Text, Title } from "shared/components/typography";
+import { Section, SocialList } from "shared/components/partials";
 
 // Constants
-import { SOCIAL_LINK_ITEMS } from '@shared/constants';
+import { SOCIAL_LINK_ITEMS } from "shared/constants";
 
 // Hooks
-import useTextAnime from '@shared/hooks/useTextAnime'
+import useTextAnime from "shared/hooks/useTextAnime";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const AboutIntro: React.FC = () => {
   const animeArray = useTextAnime();

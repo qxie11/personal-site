@@ -1,31 +1,29 @@
-import { useRef, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import gsap from 'gsap';
-import cx from 'classnames';
+import { useRef, useLayoutEffect } from "react";
+import { useRouter } from "next/router";
+import gsap from "gsap";
+import cx from "classnames";
 
 // Components
-import { Anchor } from '@shared/components/typography';
+import { Anchor } from "shared/components/typography";
 
 // Constants
-import { NAV_ITEMS, NAV_ITEMS_WITH_HOME } from './constants';
-import { PAGES } from '@shared/constants';
+import { NAV_ITEMS, NAV_ITEMS_WITH_HOME } from "./constants";
+import { PAGES } from "shared/constants";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 interface Props {
   notConvertIntoToggleMenu?: true;
 }
 
-const Nav: React.FC<Props> = ({
-  notConvertIntoToggleMenu,
-}) => {
+const Nav: React.FC<Props> = ({ notConvertIntoToggleMenu }) => {
   const { pathname } = useRouter();
 
   const items = pathname !== PAGES.HOME ? NAV_ITEMS_WITH_HOME : NAV_ITEMS;
   const links = useRef<HTMLAnchorElement[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.from(links.current, { y: -100, stagger: 0.2, delay: 0.4, opacity: 0 });
   }, []);
 

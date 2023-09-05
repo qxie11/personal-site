@@ -1,16 +1,16 @@
-import { useWindowSize } from 'rooks';
-import Image from 'next/image';
+import { useWindowSize } from "rooks";
+import Image from "next/image";
 
 // Components
-import { Section, InfoBox } from '@components/partials';
-import { Container } from '@components/partials/layout';
-import { Title, Text, ReadMore } from '@components/typography';
+import { Section, InfoBox } from "shared/components/partials";
+import { Container } from "shared/components/partials/layout";
+import { Title, Text, ReadMore } from "shared/components/typography";
 
 // Constants
-import { FEEDBACK_LIST } from './constants';
+import { FEEDBACK_LIST } from "./constants";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const ConsultFeedback = () => {
   const { innerWidth } = useWindowSize();
@@ -34,7 +34,6 @@ const ConsultFeedback = () => {
                     width={471}
                     height={579}
                     layout="intrinsic"
-                    placeholder="blur"
                     quality={90}
                     src={photo}
                     alt={name}

@@ -1,11 +1,11 @@
 // Components
-import ProjectItem from './ProjectItem';
-import { Container } from '@partials/layout';
-import { Title } from '@shared/components/typography';
-import { Section } from '@components/partials';
+import ProjectItem from "./ProjectItem";
+import { Container } from "shared/components/partials/layout";
+import { Title } from "shared/components/typography";
+import { Section } from "shared/components/partials";
 
 // Constants
-import { EXAMPLES_OF_PROJECTS } from './constants';
+import { EXAMPLES_OF_PROJECTS } from "./constants";
 
 const ExamplesOfProjects: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const ExamplesOfProjects: React.FC = () => {
       </Container>
       <ul>
         {EXAMPLES_OF_PROJECTS?.map((project) => (
-          <li key={project.img}>
+          <li key={project.subtitle}>
             <ProjectItem {...project} />
           </li>
         ))}

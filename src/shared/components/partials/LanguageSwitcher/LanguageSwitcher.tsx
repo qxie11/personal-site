@@ -1,12 +1,12 @@
-import { Select } from 'antd';
-import { useSelector } from 'react-redux';
-import cx from 'classnames';
+import { Select } from "antd";
+import { useSelector } from "react-redux";
+import cx from "classnames";
 
-import { useActions } from '@shared/hooks';
-import intlSelectors from '@store/selectors/intlSelectors';
+import { useActions } from "shared/hooks";
+import intlSelectors from "store/selectors/intlSelectors";
 
 // Constants
-import { LANGUAGE_SWITCHER_DATA } from './constants';
+import { LANGUAGE_SWITCHER_DATA } from "./constants";
 
 const { Option } = Select;
 
@@ -23,7 +23,11 @@ const LanguageSwitcher = ({ className }: Props) => {
   };
 
   return (
-    <Select className={cx(className)} value={currentLng} onChange={handleChange}>
+    <Select
+      className={cx(className)}
+      value={currentLng}
+      onChange={handleChange}
+    >
       {LANGUAGE_SWITCHER_DATA.map(({ value, text }) => (
         <Option key={value} value={value}>
           {text}

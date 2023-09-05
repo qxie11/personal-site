@@ -1,13 +1,13 @@
-import { useSelector } from 'react-redux';
-import Link, { LinkProps } from 'next/link';
-import React, { ForwardedRef, HTMLAttributes } from 'react';
-import cx from 'classnames';
+import { useSelector } from "react-redux";
+import Link, { LinkProps } from "next/link";
+import React, { ForwardedRef, HTMLAttributes } from "react";
+import cx from "classnames";
 
 // Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
+import modeSelectors from "store/selectors/modeSelectors";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 interface Props extends LinkProps, HTMLAttributes<HTMLAnchorElement> {
   href: string;

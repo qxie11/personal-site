@@ -1,14 +1,14 @@
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 // Components
-import { Anchor } from '@components/typography';
+import { Anchor } from "shared/components/typography";
 
 // Constants
-import { SocialLink } from '@shared/types';
+import { SocialLink } from "shared/types";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 interface Props {
   linkList: SocialLink[];

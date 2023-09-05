@@ -1,17 +1,17 @@
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 // Components
-import { Footer } from '@components/partials';
+import { Footer } from "shared/components/partials";
 
 // Hooks
-import { useOnAppInit } from '@shared/hooks';
+import { useOnAppInit } from "shared/hooks";
 
-const Header = dynamic(() => import('@components/partials/Header/Header'), {
+const Header = dynamic(() => import("shared/components/partials/Header/Header"), {
   ssr: false,
 });
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const MainWrapper = ({ children }) => {
   useOnAppInit();

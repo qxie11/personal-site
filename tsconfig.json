@@ -1,12 +1,8 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
+    "baseUrl": "./src",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -17,14 +13,27 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@icons/*": ["./src/assets/icons/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@partials/*": ["./src/shared/components/partials/*"],
+      "@sections/*": ["./src/shared/components/sections/*"],
+      "@components/*": ["./src/shared/components/*"],
+      "@constants/*": ["./src/shared/constants/*"],
+      "@hooks/*": ["./src/shared/hooks/*"],
+      "@utils/*": ["./src/shared/utils/*"],
+      "@context/*": ["./src/shared/context/*"],
+      "@helpers/*": ["./src/shared/helpers/*"],
+      "@types/*": ["./src/shared/types/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@store/*": ["./src/store/*"],
+      "@intl/*": ["./src/intl/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

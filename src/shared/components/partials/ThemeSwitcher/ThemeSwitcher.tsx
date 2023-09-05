@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux';
-import cx from 'classnames';
-import { useActions } from '@shared/hooks';
+import { useSelector } from "react-redux";
+import cx from "classnames";
+import { useActions } from "shared/hooks";
 
 // Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
+import modeSelectors from "store/selectors/modeSelectors";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const ThemeSwitcher = () => {
   const { switchMode } = useActions();

@@ -1,13 +1,13 @@
 // Components
-import { Container } from '@partials/layout';
-import { Title, Text } from '@components/typography';
-import { Section, InfoBox } from '@components/partials';
+import { Container } from "shared/components/partials/layout";
+import { Title, Text } from "shared/components/typography";
+import { Section, InfoBox } from "shared/components/partials";
 
 // Constants
-import { THEMES_LIST } from './constants';
+import { THEMES_LIST } from "./constants";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const ConsultThemes = () => (
   <Section>
@@ -18,7 +18,9 @@ const ConsultThemes = () => (
       <ul className={styles.wrapper}>
         {THEMES_LIST.map(({ title, text }) => (
           <InfoBox key={title}>
-            <Title middle level={3}>{title}</Title>
+            <Title middle level={3}>
+              {title}
+            </Title>
             <Text>{text}</Text>
           </InfoBox>
         ))}

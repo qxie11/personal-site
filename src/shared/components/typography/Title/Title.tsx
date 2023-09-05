@@ -1,23 +1,20 @@
-import React, { ForwardedRef, forwardRef, HTMLAttributes } from 'react';
-import cx from 'classnames';
-import { useSelector } from 'react-redux';
-import { Typography } from 'antd';
-import { TitleProps } from 'antd/lib/typography/Title';
-import modeSelectors from '@store/selectors/modeSelectors';
-import styles from './styles.module.scss';
+import React, { ForwardedRef, forwardRef } from "react";
+import cx from "classnames";
+import { useSelector } from "react-redux";
+import { Typography } from "antd";
+import { TitleProps } from "antd/lib/typography/Title";
+import modeSelectors from "store/selectors/modeSelectors";
+import styles from "./styles.module.scss";
 
 const { Title: AntdTitle } = Typography;
 
-interface Props extends TitleProps, HTMLAttributes<HTMLHeadingElement> {
+interface Props extends TitleProps {
   children: React.ReactNode;
   className?: string;
   light?: boolean;
   small?: boolean;
   middle?: boolean;
-  fixedColor?: 'dark' | 'light';
-  onClick?: (
-    e?: React.MouseEvent<HTMLHeadingElement, MouseEvent> | undefined
-  ) => void;
+  fixedColor?: "dark" | "light";
   ref?: ForwardedRef<HTMLHeadingElement>;
 }
 
@@ -31,7 +28,7 @@ const Title: React.FC<Props> = forwardRef(
           {
             [styles.title]: !light && !small,
             [styles.titleLight]:
-              (isDarkMode || fixedColor === 'light') && fixedColor !== 'dark',
+              (isDarkMode || fixedColor === "light") && fixedColor !== "dark",
             [styles.titleSmall]: small,
             [styles.titleMiddle]: middle,
           },

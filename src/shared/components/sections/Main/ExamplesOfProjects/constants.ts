@@ -1,28 +1,29 @@
-import Images from '@assets/images';
+import Images from "assets/images";
+import { IProjectItem } from "./ProjectItem/types";
 
-export const EXAMPLES_OF_PROJECTS = [
+export const EXAMPLES_OF_PROJECTS: IProjectItem[] = [
   {
-    title: 'пользовательский сайт',
-    subtitle: 'kinderheldin',
+    title: "пользовательский сайт",
+    subtitle: "kinderheldin",
     img: Images.kinderheldin,
-    url: 'https://kinderheldin.de/',
+    url: "https://kinderheldin.de/",
   },
   {
-    title: 'корпоротивный сайт',
-    subtitle: 'faifly',
+    title: "корпоротивный сайт",
+    subtitle: "faifly",
     img: Images.faifly,
-    url: 'https://faifly.com/',
+    url: "https://faifly.com/",
   },
   {
-    title: 'пользовательский сайт',
-    subtitle: 'lieferando',
+    title: "пользовательский сайт",
+    subtitle: "lieferando",
     img: Images.lieferando,
-    url: 'https://www.lieferando.de/',
+    url: "https://www.lieferando.de/",
   },
   {
-    title: 'пользовательский сайт',
-    subtitle: 'stpierre-bru',
+    title: "пользовательский сайт",
+    subtitle: "stpierre-bru",
     img: Images.stpierre,
-    url: 'https://www.stpierre-bru.be/',
+    url: "https://www.stpierre-bru.be/",
   },
 ];

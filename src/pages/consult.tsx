@@ -1,14 +1,14 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 // Components
-import { MainWrapper } from '@partials/wrappers';
+import { MainWrapper } from "shared/components/partials/wrappers";
 import {
   ConsultIntro,
   ConsultThemes,
   WhyMe,
   ConsultFeedback,
   ConsultPrices,
-} from '@shared/components/sections';
+} from "shared/components/sections";
 
 export default function Consult() {
   return (

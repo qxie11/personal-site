@@ -1,12 +1,12 @@
-import { HTMLAttributes } from 'react';
-import cx from 'classnames';
-import { useSelector } from 'react-redux';
+import { HTMLAttributes } from "react";
+import cx from "classnames";
+import { useSelector } from "react-redux";
 
 // Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
+import modeSelectors from "store/selectors/modeSelectors";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 interface Props extends HTMLAttributes<HTMLElement> {
   className?: string;
@@ -22,7 +22,7 @@ const Section: React.FC<Props> = ({
   ...rest
 }) => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
-  const Tag: any = tagName ?? 'section';
+  const Tag: any = tagName ?? "section";
 
   return (
     <Tag

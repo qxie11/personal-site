@@ -1,10 +1,10 @@
-import { store } from '@store/store';
-import { RootState } from '@store/store';
-import { createSelector } from '@reduxjs/toolkit';
+import { store } from "store/store";
+import { RootState } from "store/store";
+import { createSelector } from "@reduxjs/toolkit";
 
-import { INTL } from '@shared/constants';
-import RussianLocale from '@intl/ru.locale.json';
-import EnglishLocale from '@intl/en.locale.json';
+import { INTL } from "shared/constants";
+import RussianLocale from "intl/ru.locale.json";
+import EnglishLocale from "intl/en.locale.json";
 
 const selectState = (state: RootState = store.getState()) => state.intl;
 

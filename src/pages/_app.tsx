@@ -1,23 +1,25 @@
-import { store } from '../store/store';
-import { Provider, useSelector } from 'react-redux';
-import Head from 'next/head';
-import NextNprogress from 'nextjs-progressbar';
-import { IntlProvider } from 'react-intl';
-import intlSelectors from '@store/selectors/intlSelectors';
+import { store } from "../store/store";
+import { Provider, useSelector } from "react-redux";
+import Head from "next/head";
+import NextNprogress from "nextjs-progressbar";
+import { IntlProvider } from "react-intl";
+import intlSelectors from "store/selectors/intlSelectors";
 
-import 'antd/dist/antd.css';
-import '../styles/fonts.scss';
-import '../styles/base.scss';
-import '../styles/global.scss';
+import "antd/dist/antd.less";
+import "../styles/fonts.scss";
+import "../styles/base.scss";
+import "../styles/global.scss";
 
 const IntlComponent = ({ children }) => {
   const defaultLanguage = useSelector(intlSelectors.selectDefaultLanguage);
   const messages = useSelector(intlSelectors.selectMessages);
 
-  return <IntlProvider locale={defaultLanguage} messages={messages}>
-    {children}
-  </IntlProvider>
-}
+  return (
+    <IntlProvider locale={defaultLanguage || 'en'} messages={messages}>
+      {children}
+    </IntlProvider>
+  );
+};
 
 export default function App({ Component, pageProps }) {
   return (

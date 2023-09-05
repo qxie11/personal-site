@@ -1,15 +1,15 @@
-import Link from 'next/link';
-import cx from 'classnames';
-import { useSelector } from 'react-redux';
+import Link from "next/link";
+import cx from "classnames";
+import { useSelector } from "react-redux";
 
 // Constants
-import { PAGES } from '@shared/constants';
+import { PAGES } from "shared/constants";
 
 // Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
+import modeSelectors from "store/selectors/modeSelectors";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const Logo: React.FC = () => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);

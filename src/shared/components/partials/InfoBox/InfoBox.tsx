@@ -1,11 +1,11 @@
-import { useSelector } from 'react-redux';
-import cx from 'classnames';
+import { useSelector } from "react-redux";
+import cx from "classnames";
 
 // Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
+import modeSelectors from "store/selectors/modeSelectors";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 interface Props {
   wrapperAttributes?: React.HTMLAttributes<HTMLDivElement>;
@@ -18,7 +18,6 @@ const InfoBox: React.FC<Props> = ({
   children,
 }) => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
-
   return (
     <div
       {...boxAttributes}

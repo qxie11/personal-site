@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 interface State {
   isDarkMode: boolean;
@@ -9,7 +9,7 @@ const initialState: State = {
 };
 
 const modeSlice = createSlice({
-  name: 'mode',
+  name: "mode",
   initialState,
   reducers: {
     switchMode(state) {

@@ -1,13 +1,13 @@
 import { useState, useMemo } from 'react';
 
 // Components
-import { Text } from '@components/typography';
+import { Text } from 'shared/components/typography';
 
 // Types
-import { IReadMore } from '@shared/types';
+import { IReadMore } from 'shared/types';
 
 // Utils
-import { parseReadMoreText } from '@shared/utils';
+import { parseReadMoreText } from 'shared/utils';
 
 const ReadMore = ({ text, min, max, ideal, textClassName }: IReadMore) => {
   const [isOpen, setIsOpen] = useState(false);

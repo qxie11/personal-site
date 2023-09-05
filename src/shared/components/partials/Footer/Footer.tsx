@@ -1,10 +1,10 @@
 // Components
-import { Nav, Section } from '@components/partials';
-import { Container } from '@partials/layout';
-import { Title, Anchor } from '@shared/components/typography';
+import { Nav, Section } from "shared/components/partials";
+import { Container } from "shared/components/partials/layout";
+import { Title, Anchor } from "shared/components/typography";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const Footer: React.FC = () => (
   <Section tagName="footer">
@@ -16,10 +16,10 @@ const Footer: React.FC = () => (
         className={styles.tmeLink}
         target="_blank"
         href="https://t.me/dsxxxx"
-      >      
+      >
         t.me/dsxxxx
       </Anchor>
-      <Nav withoutToggleTheme notConvertIntoToggleMenu />
+      <Nav notConvertIntoToggleMenu />
     </Container>
   </Section>
 );

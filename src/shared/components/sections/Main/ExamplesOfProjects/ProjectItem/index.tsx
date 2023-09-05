@@ -1,18 +1,18 @@
-import { useSelector } from 'react-redux';
-import cx from 'classnames';
-import Image from 'next/image';
+import { useSelector } from "react-redux";
+import cx from "classnames";
+import Image from "next/image";
 
 // Components
-import { Container } from '@partials/layout';
+import { Container } from "shared/components/partials/layout";
 
 // Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
+import modeSelectors from "store/selectors/modeSelectors";
 
 // Types
-import { IProjectItem } from './types';
+import { IProjectItem } from "./types";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
@@ -35,7 +35,7 @@ const ProjectItem: React.FC<IProjectItem> = ({ title, subtitle, img, url }) => {
       />
       <Container>
         <h3
-          style={{ textShadow: `1px 1px 6px ${isDarkMode ? '#000' : '#fff'}` }}
+          style={{ textShadow: `1px 1px 6px ${isDarkMode ? "#000" : "#fff"}` }}
           className={cx(styles.projectTitle, {
             lightColor: isDarkMode,
           })}

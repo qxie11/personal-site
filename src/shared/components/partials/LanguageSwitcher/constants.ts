@@ -1,12 +1,12 @@
-import { INTL } from '@shared/constants';
+import { INTL } from "shared/constants";
 
 export const LANGUAGE_SWITCHER_DATA = [
   {
-    text: 'Русский',
+    text: "Русский",
     value: INTL.RUSSIAN,
   },
   {
-    text: 'English',
+    text: "English",
     value: INTL.ENGLISH,
   },
 ];

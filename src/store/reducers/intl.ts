@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { INTL } from '@shared/constants';
+import { createSlice } from "@reduxjs/toolkit";
+import { INTL } from "shared/constants";
 
 interface State {
   defaultLanguage: undefined | string;
@@ -12,7 +12,7 @@ const initialState: State = {
 };
 
 const intlSlice = createSlice({
-  name: 'intl',
+  name: "intl",
   initialState,
   reducers: {
     setDefaultLng(state, action) {
@@ -20,7 +20,7 @@ const intlSlice = createSlice({
     },
     changeCurrentLng(state, action) {
       state.currentLng = action.payload;
-      localStorage.setItem('currentLng', action.payload);
+      localStorage.setItem("currentLng", action.payload);
     },
   },
 });

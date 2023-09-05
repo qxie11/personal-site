@@ -1,6 +1,6 @@
-import { store } from '@store/store';
-import { RootState } from '@store/store';
-import { createSelector } from '@reduxjs/toolkit';
+import { store } from "store/store";
+import { RootState } from "store/store";
+import { createSelector } from "@reduxjs/toolkit";
 
 const selectState = (state: RootState = store.getState()) => state.mode;
 

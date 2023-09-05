@@ -1,17 +1,22 @@
-import { useEffect, useRef, useState } from 'react';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { useWindowSize } from 'rooks';
-import gsap from 'gsap';
-import cx from 'classnames';
+import { useEffect, useRef, useState } from "react";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import { useWindowSize } from "rooks";
+import gsap from "gsap";
+import cx from "classnames";
 
 // Components
-import { LanguageSwitcher, Logo, Nav, ThemeSwitcher } from '@components/partials';
+import {
+  LanguageSwitcher,
+  Logo,
+  Nav,
+  ThemeSwitcher,
+} from "shared/components/partials";
 
 // Constants
-import { BREAKPOINT } from '@shared/constants';
+import { BREAKPOINT } from "shared/constants";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const Header: React.FC = () => {
   const header = useRef<HTMLHeadElement | null>(null);
@@ -23,7 +28,7 @@ const Header: React.FC = () => {
       y: -50,
       duration: 1.9,
       delay: 0.2,
-      ease: 'elastic',
+      ease: "elastic",
     });
   }, []);
 

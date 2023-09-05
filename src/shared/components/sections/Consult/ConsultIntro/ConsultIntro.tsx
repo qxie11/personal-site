@@ -1,24 +1,24 @@
-import { useSelector } from 'react-redux';
-import Image from 'next/image';
-import Images from '@assets/images';
-import cx from 'classnames';
+import { useSelector } from "react-redux";
+import Image from "next/image";
+import Images from "assets/images";
+import cx from "classnames";
 
 // Components
-import { Container } from '@partials/layout';
-import { Text, Title } from '@components/typography';
-import { Section, SocialList } from '@components/partials';
+import { Container } from "shared/components/partials/layout";
+import { Text, Title } from "shared/components/typography";
+import { Section, SocialList } from "shared/components/partials";
 
 // Constants
-import { SOCIAL_LINK_ITEMS } from '@shared/constants';
+import { SOCIAL_LINK_ITEMS } from "shared/constants";
 
 // Selectors
-import modeSelectors from '@store/selectors/modeSelectors';
+import modeSelectors from "store/selectors/modeSelectors";
 
 // Hooks
-import useTextAnime from '@shared/hooks/useTextAnime';
+import useTextAnime from "shared/hooks/useTextAnime";
 
 // Styles
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const ConsultIntro: React.FC = () => {
   const animeArray = useTextAnime();
@@ -27,8 +27,8 @@ const ConsultIntro: React.FC = () => {
   return (
     <Section className={styles.section}>
       <Container>
-        <div className={cx(styles.wrapper, 'd-f jc-sb gap-15')}>
-          <div className={cx(styles.infoWrapper, 'f-b-50')}>
+        <div className={cx(styles.wrapper, "d-f jc-sb gap-15")}>
+          <div className={cx(styles.infoWrapper, "f-b-50")}>
             <Title>менторство</Title>
             <Text
               ref={(text) => animeArray.current.push(text)}
@@ -45,8 +45,8 @@ const ConsultIntro: React.FC = () => {
               width="789"
               height="438"
               layout="intrinsic"
-              src={Images[isDarkMode ? 'consult_dark' : 'consult_light']}
-              placeholder="blur"
+              src={Images[isDarkMode ? "consult_dark" : "consult_light"]}
+              alt="consult"
             />
           </div>
         </div>
