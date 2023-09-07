@@ -1,0 +1,69 @@
+@import "src/styles/vars";
+@import "src/styles/mixins";
+
+.menuBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 11000;
+  display: none;
+  width: 60px;
+  height: 60px;
+  padding: 18px 0;
+  background: $black;
+  cursor: pointer;
+
+  @include breakpoint($md) {
+    display: block;
+  }
+
+  .menuBtnLine {
+    display: block;
+    width: 50%;
+    height: 3px;
+    border-radius: 2px;
+    background: $white;
+    margin: 0 auto;
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      margin-top: 9px;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba($black, 0.93);
+  padding: 25px 15px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vh;
+  flex-direction: column;
+  margin-top: 20vh;
+}
+
+.link {
+  font-size: 3rem;
+  color: $white;
+}
+
+.language {
+  display: block;
+  width: min(60%, 300px);
+  margin: 8vh auto 0;
+}
+
+.theme {
+  display: block;
+  margin: 8vh auto 0;
+}

@@ -4,6 +4,7 @@
 .toggle_mode_btn {
   background: transparent;
   border: none;
+  margin-left: 25px;
 
   @include breakpoint($sm) {
     max-width: 37px;

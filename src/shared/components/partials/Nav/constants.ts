@@ -7,6 +7,10 @@ export type NavItem = {
 
 export const NAV_ITEMS: NavItem[] = [
   {
+    text: "главная",
+    link: PAGES.HOME,
+  },
+  {
     text: "обо мне",
     link: PAGES.ABOUT,
   },
@@ -18,12 +22,4 @@ export const NAV_ITEMS: NavItem[] = [
     text: "работы",
     link: "/#works",
   },
-];
-
-export const NAV_ITEMS_WITH_HOME: NavItem[] = [
-  {
-    text: "главная",
-    link: PAGES.HOME,
-  },
-  ...NAV_ITEMS,
 ];

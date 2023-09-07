@@ -8,13 +8,17 @@ import modeSelectors from "store/selectors/modeSelectors";
 // Styles
 import styles from "./styles.module.scss";
 
-const ThemeSwitcher = () => {
+type Props = {
+  className: string
+}
+
+const ThemeSwitcher = ({ className }: Props) => {
   const { switchMode } = useActions();
 
   const isDarkMode = useSelector(modeSelectors.selectCurrentTheme);
 
   return (
-    <button className={cx(styles.toggle_mode_btn)} onClick={() => switchMode()}>
+    <button className={cx(className, styles.toggle_mode_btn)} onClick={() => switchMode()}>
       {!isDarkMode ? (
         <svg
           className={cx(styles.svg, styles.moon)}

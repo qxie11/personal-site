@@ -6,9 +6,7 @@ import { IntlProvider } from "react-intl";
 import intlSelectors from "store/selectors/intlSelectors";
 
 import "antd/dist/antd.less";
-import "../styles/fonts.scss";
-import "../styles/base.scss";
-import "../styles/global.scss";
+import "../styles/index.scss";
 
 const IntlComponent = ({ children }) => {
   const defaultLanguage = useSelector(intlSelectors.selectDefaultLanguage);

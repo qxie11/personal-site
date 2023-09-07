@@ -1,8 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import { useWindowSize } from "rooks";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import cx from "classnames";
 
 // Components
 import {
@@ -12,61 +9,39 @@ import {
   ThemeSwitcher,
 } from "shared/components/partials";
 
-// Constants
-import { BREAKPOINT } from "shared/constants";
+// Hooks
+import { useMedia } from "shared/hooks";
 
 // Styles
 import styles from "./styles.module.scss";
 
 const Header: React.FC = () => {
   const header = useRef<HTMLHeadElement | null>(null);
-  const [isNavActive, setNavActive] = useState(false);
-  const { innerWidth } = useWindowSize();
+  const { isMD } = useMedia();
 
   useEffect(() => {
-    gsap.from(header.current, {
-      y: -50,
-      duration: 1.9,
-      delay: 0.2,
-      ease: "elastic",
-    });
+    if (isMD) {
+      gsap.from(header.current, {
+        y: -50,
+        duration: 1.9,
+        delay: 0.2,
+        ease: "elastic",
+      });
+    }
   }, []);
-
-  useEffect(() => {
-    if (isNavActive) {
-      disableBodyScroll(document);
-    } else {
-      enableBodyScroll(document);
-    }
-  }, [isNavActive]);
-
-  useEffect(() => {
-    if (innerWidth > BREAKPOINT.SM && isNavActive) {
-      setNavActive(false);
-    }
-  }, [innerWidth]);
 
   return (
     <>
-      <header
-        ref={header}
-        className={cx(styles.header, {
-          [styles.active]: isNavActive,
-        })}
-      >
-        <Logo />
+      <header ref={header} className={styles.header}>
+        {isMD && <Logo />}
         <Nav />
-        <LanguageSwitcher className={styles.themeSwitcher} />
-        <ThemeSwitcher />
+        {isMD && (
+          <>
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </>
+        )}
       </header>
-      <button
-        className={styles.menuBtn}
-        onClick={() => setNavActive(!isNavActive)}
-      >
-        <span className={styles.menuBtnLine}></span>
-        <span className={styles.menuBtnLine}></span>
-        <span className={styles.menuBtnLine}></span>
-      </button>
     </>
   );
 };

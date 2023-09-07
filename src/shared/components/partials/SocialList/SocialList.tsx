@@ -39,7 +39,7 @@ const SocialList: React.FC<Props> = ({ linkList }) => {
           <Anchor
             className={styles.socialLink}
             external
-            underlineAnimation
+            underline
             style={{ color }}
             target="_blank"
             href={link}

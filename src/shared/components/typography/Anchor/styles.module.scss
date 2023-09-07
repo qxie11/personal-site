@@ -1,4 +1,4 @@
-@import 'src/styles/vars';
+@import "src/styles/vars";
 
 .link {
   font-size: 1.2rem;
@@ -14,11 +14,11 @@
   color: $white;
 }
 
-.underlineAnimation {
+.underline {
   position: relative;
 
   &:before {
-    content: '';
+    content: "";
     width: 0;
     position: absolute;
     bottom: -5px;

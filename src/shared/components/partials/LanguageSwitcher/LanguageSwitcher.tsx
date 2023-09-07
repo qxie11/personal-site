@@ -8,6 +8,8 @@ import intlSelectors from "store/selectors/intlSelectors";
 // Constants
 import { LANGUAGE_SWITCHER_DATA } from "./constants";
 
+import styles from './styles.module.scss'
+
 const { Option } = Select;
 
 interface Props {
@@ -24,7 +26,7 @@ const LanguageSwitcher = ({ className }: Props) => {
 
   return (
     <Select
-      className={cx(className)}
+      className={cx(styles.switcher, className)}
       value={currentLng}
       onChange={handleChange}
     >

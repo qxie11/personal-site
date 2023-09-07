@@ -1,0 +1,9 @@
+@import 'src/styles/vars';
+@import 'src/styles/mixins';
+
+.nav {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-left: auto;
+}

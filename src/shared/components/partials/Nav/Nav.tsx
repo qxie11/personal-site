@@ -1,53 +1,12 @@
-import { useRef, useLayoutEffect } from "react";
-import { useRouter } from "next/router";
-import gsap from "gsap";
-import cx from "classnames";
+import React from "react";
+import { useMedia } from "shared/hooks";
+import NavDesktop from "./NavDesktop/NavDesktop";
+import NavMobile from "./NavMobile/NavMobile";
 
-// Components
-import { Anchor } from "shared/components/typography";
+const Nav = () => {
+  const { isMD } = useMedia();
 
-// Constants
-import { NAV_ITEMS, NAV_ITEMS_WITH_HOME } from "./constants";
-import { PAGES } from "shared/constants";
-
-// Styles
-import styles from "./styles.module.scss";
-
-interface Props {
-  notConvertIntoToggleMenu?: true;
-}
-
-const Nav: React.FC<Props> = ({ notConvertIntoToggleMenu }) => {
-  const { pathname } = useRouter();
-
-  const items = pathname !== PAGES.HOME ? NAV_ITEMS_WITH_HOME : NAV_ITEMS;
-  const links = useRef<HTMLAnchorElement[]>([]);
-
-  useLayoutEffect(() => {
-    gsap.from(links.current, { y: -100, stagger: 0.2, delay: 0.4, opacity: 0 });
-  }, []);
-
-  const addLinkToRef = (el: HTMLAnchorElement) => {
-    if (el && !links.current.includes(el)) {
-      links.current.push(el);
-    }
-  };
-
-  return (
-    <>
-      <nav
-        className={cx(styles.nav, {
-          [styles.menuConvert]: !notConvertIntoToggleMenu,
-        })}
-      >
-        {items.map(({ text, link }) => (
-          <Anchor underlineAnimation href={link} key={link} ref={addLinkToRef}>
-            {text}
-          </Anchor>
-        ))}
-      </nav>
-    </>
-  );
+  return <>{isMD ? <NavDesktop /> : <NavMobile />}</>;
 };
 
 export default Nav;

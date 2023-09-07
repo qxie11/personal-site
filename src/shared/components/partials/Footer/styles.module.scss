@@ -1,14 +1,6 @@
-.tmeLink {
+.link {
   display: inline-block;
-  margin-bottom: 50px;
-  font-size: 55px;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
-
-  @media (max-width: 768px) {
-    font-size: 30px;
-  }
-
-  @media (max-width: 576px) {
-    font-size: 23px;
-  }
 }
