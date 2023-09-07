@@ -9,7 +9,7 @@ import modeSelectors from "store/selectors/modeSelectors";
 import styles from "./styles.module.scss";
 
 type Props = {
-  className: string
+  className?: string
 }
 
 const ThemeSwitcher = ({ className }: Props) => {
